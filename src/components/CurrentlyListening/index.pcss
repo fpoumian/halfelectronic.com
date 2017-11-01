@@ -1,0 +1,31 @@
+.wrapper {
+  composes: sidebar-submenu-wrapper from "styles/sidebar.pcss";
+}
+
+.item-list {
+  list-style: none;
+  padding-left: 0.4rem;
+
+  & li {
+    border-bottom: 1px solid var(--lightGray);
+    margin-bottom: 1rem;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.loading {
+  font-size: 0.75rem;
+  font-weight: 300;
+  font-family: "Noto Serif","Times New Roman", Serif;
+}
+
+.powered-by {
+  font-size: 0.7rem;
+  display: block;
+}
+
+.goodReadsLogo {
+  text-align: right;
+}

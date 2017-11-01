@@ -5,6 +5,7 @@ import get from 'lodash/get'
 
 import Bio from '../components/Bio'
 import { rhythm, scale } from '../utils/typography'
+import styles from './blog-post.module.css'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class BlogPostTemplate extends React.Component {
     return (
       <div>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-        <h1>{post.frontmatter.title}</h1>
+        <h1 className={styles.heading}>{post.frontmatter.title}</h1>
         <p
           style={{
             ...scale(-1 / 5),

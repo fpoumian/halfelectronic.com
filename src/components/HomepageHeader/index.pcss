@@ -1,0 +1,36 @@
+.wrapper {
+  composes: header-wrapper from "styles/base.pcss";
+  @media (--tablet) {
+    align-items: center;
+  }
+}
+
+.avatar-wrapper {
+  margin-bottom: 1rem;
+  & img {
+    border-radius: 50%;
+  }
+  @media (--tablet) {
+    margin-bottom: 0;
+  }
+}
+
+.info {
+  width: 80%;
+  margin-left: 0;
+  margin: 0 auto;
+  & p {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  @media (--tablet) {
+    width: 100%;
+    margin: 0;
+    padding-left: 2rem;
+  }
+}
+
+.heading {
+  margin: 0 !important;
+}

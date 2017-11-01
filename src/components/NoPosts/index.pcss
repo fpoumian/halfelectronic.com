@@ -1,0 +1,17 @@
+:root {
+  --wrapperDisplay: {
+    display: flex;
+    flex-direction: column;
+  };
+  --wrapperWidth: {
+    width: 90%;
+    max-width: var(--maxWidth);
+  };
+}
+
+.wrapper {
+  @apply --wrapperDisplay;
+  @apply --wrapperWidth;
+  margin: 4vh auto;
+  align-items: center;
+}

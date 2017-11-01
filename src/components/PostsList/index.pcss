@@ -1,0 +1,17 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+
+  & li {
+    padding: 10% 0;
+    @media (--tablet) {
+      padding: 9vh 0;
+    }
+  }
+
+  & li:nth-child(even) {
+    background: #f9f9f9;
+  }
+}

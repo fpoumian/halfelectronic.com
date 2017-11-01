@@ -1,0 +1,12 @@
+:root {
+    --mainColor: red;
+  }
+  
+  .item {
+    margin-bottom: 50px;  
+  }
+
+.heading {
+    font-size: 51px;
+    color: var(--mainColor);
+}

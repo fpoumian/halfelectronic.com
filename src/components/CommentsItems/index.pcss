@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  background: var(--darkestGray);
+  padding: 10vh 0;
+  transition: visibility 0s, opacity 0.5s linear;
+  & > div {
+    width: 90%;
+    max-width: var(--maxWidth);
+  }
+}
+
+.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.closed {
+  visibility: hidden;
+  opacity: 0;
+}

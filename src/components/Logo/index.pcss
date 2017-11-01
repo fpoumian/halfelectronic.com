@@ -1,0 +1,32 @@
+.letters {
+
+  &:hover .animated-letters {
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+  }
+
+  font-family: var(--altFontFamily);
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.hidden-letters {
+  display: none;
+}
+
+.animated-letters {
+  opacity: 0;
+  visibility: hidden;
+  width: 0;
+  display: inline-block;
+  transition: opacity 2s ease-in-out, width 2s linear, visibility 2s ease-in-out;
+}
+
+.light-bg {
+  color: #000000;
+}
+
+.dot {
+  color: var(--accentColorHover);
+}

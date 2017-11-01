@@ -1,0 +1,44 @@
+.item {
+  composes: sidebar-submenu-item from "styles/sidebar.pcss";
+}
+
+.root {
+  display: flex;
+}
+
+.info {
+  width: 60%;
+}
+
+.label {
+  composes: item;
+  color: var(--darkGray);
+}
+
+.name {
+  composes: item;
+  color: var(--accentColor);
+}
+
+.artist {
+  composes: item;
+}
+
+.status {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 40%;
+}
+
+.bars-wrapper {
+  position: relative;
+  width: 42px;
+}
+
+.date-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  composes: item;
+}

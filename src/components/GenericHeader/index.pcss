@@ -1,0 +1,14 @@
+.wrapper {
+  composes: header-wrapper from "styles/base.pcss";
+  @media (--tablet) {
+    align-items: center;
+  }
+}
+
+.heading {
+  margin: 0 !important;
+  color: var(--colorNeutralLight);
+  text-shadow: 0 0 10px var(--colorPrimaryDark),
+  0 0 6px var(--colorNeutralDark),
+  0 0 2px var(--colorNeutralDark);
+}

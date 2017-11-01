@@ -1,0 +1,116 @@
+:root {
+  --blockquoteDivider: {
+    display: block;
+    width: 60%;
+    height: 1px;
+    content: '';
+    background: #ededed;
+    margin: 60px auto 40px;
+  }
+}
+
+@custom-selector :--headingElements h1,h2,h3,h4,h5,h6;
+
+.wrapper {
+  margin: 4vh auto;
+
+  & :--headingElements {
+    margin-bottom: -1rem;
+  }
+
+  & p {
+    margin: 2rem 0;
+  }
+
+  & a {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  & img {
+    width: 100%;
+  }
+
+  & h2 {
+    color: color(var(--darkestGray) lightness(22%));
+  }
+  & h3 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--neutralGray);
+  }
+
+  & h4 {
+    font-size: 1.25rem;
+    color: var(--neutralGray);
+  }
+
+  & h5 {
+    font-size: 1.15rem;
+    color: var(--neutralGray);
+  }
+
+  & h6 {
+    font-size: 1.05rem;
+    color: var(--neutralGray);
+  }
+
+  & ul {
+    margin-left: 10%;
+    padding: 0;
+    line-height: 2rem;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    & li {
+      margin: 0 0 20px;
+      padding: 0 2.5%;
+    }
+  }
+  & hr {
+    width: 60%;
+    height: 1px;
+    margin: 50px auto;
+    border: 0;
+    background: #dfdfdf;
+  }
+  & blockquote {
+    text-align: center;
+    & > p {
+      font-size: 1.5rem;
+      font-family: var(--altFontFamily);
+      color: var(--darkestGray);
+    }
+
+    & > ul > li {
+      font-size: 1.4rem;
+      font-family: var(--altFontFamily);
+    }
+    & ul {
+      padding: 0;
+      margin: 0;
+      & li {
+        list-style: none;
+        line-height: 1rem;
+        color: var(--neutralGray);
+        &:before {
+          display: inline-block;
+          width: 20px;
+          height: 4px;
+          content: '';
+          background: #ededed;
+          margin-right: 0.5rem;
+          margin-bottom: 0.2rem;
+        }
+      }
+    }
+    &:before {
+      @apply --blockquoteDivider;
+      margin: 60px auto 40px;
+    }
+    &:after {
+      @apply --blockquoteDivider;
+      margin: 40px auto 60px;
+    }
+  }
+
+}

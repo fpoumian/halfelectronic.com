@@ -1,0 +1,35 @@
+.font-size {
+  font-size: 0.75rem;
+}
+
+.footer {
+  text-align: center;
+  background: var(--darkestGray);
+  padding: 2vh 0;
+  @media (--laptop) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.info {
+  composes: font-size;
+  font-family: var(--mainFontFamily);
+  font-weight: 300;
+}
+
+.copyright {
+  color: var(--colorNeutralLight);
+  display: block;
+}
+
+.phenomicReference {
+  composes: font-size;
+  opacity: 0.6;
+  color: var(--colorNeutralLight);
+  text-decoration: none;
+}
+
+.phenomicReferenceName {
+  font-weight: 100;
+}

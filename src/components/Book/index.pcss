@@ -1,0 +1,19 @@
+.item {
+  composes: sidebar-submenu-item from "styles/sidebar.pcss";
+}
+
+.title {
+  display: block;
+  color: var(--accentColor);
+  line-height: normal;
+  composes: item;
+}
+
+.by {
+  margin-right: 0.3rem;
+  composes: item;
+}
+
+.author {
+  composes: item;
+}

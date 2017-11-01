@@ -1,0 +1,15 @@
+:root {
+  --wrapperDisplay: {
+    display: block;
+  };
+  --wrapperWidth: {
+    width: 70%;
+    max-width: var(--maxWidth);
+  };
+}
+
+.wrapper {
+  @apply --wrapperDisplay;
+  @apply --wrapperWidth;
+  margin: 0 auto;
+}

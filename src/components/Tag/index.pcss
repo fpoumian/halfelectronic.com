@@ -1,0 +1,34 @@
+.wrapper {
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+  line-height: 1rem;
+}
+
+.dark {
+  background: var(--accentColor);
+  color: #fff;
+  transition: background 0.25s ease-in;
+  &:hover {
+    background: color(var(--accentColorHover));
+  }
+}
+
+.light {
+  background: color(var(--neutralGray) tint(78%));
+  color: var(--darkGray);
+  &:hover {
+    background: color(var(--neutralGray) tint(58%));
+  }
+}
+
+.tag {
+  text-transform: uppercase;
+  font-family: var(--mainFontFamily);
+  font-weight: bold;
+  font-size: 11px;
+  width: 100%;
+  padding: 12px 25px;
+  display: block;
+}
