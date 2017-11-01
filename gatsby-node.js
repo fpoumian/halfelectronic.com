@@ -48,6 +48,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 }
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
+  // add this to have absolute imports
+  config.merge(function(current) {
+    current.resolve.root = path.resolve('./src')
+    return current
+  })
+
+  // custom postcss-next config
   switch (stage) {
     case 'develop':
       config.merge({
@@ -104,6 +111,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
         },
       })
       return config
+      break
     case 'build-css':
       config.merge({
         postcss: [
@@ -155,5 +163,6 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
         ],
       })
       return config
+      break
   }
 }
