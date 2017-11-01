@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 import CommentsIcon from "react-icons/lib/fa/comments-o"
 
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 
 const CommentsToggle = ({ onClick, open }) => {
   const label = open ? "Comments" : "View Comments"

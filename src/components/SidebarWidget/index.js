@@ -2,7 +2,7 @@ import React, { cloneElement } from "react"
 import PropTypes from "prop-types"
 
 import PoweredBy from "components/PoweredBy"
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 
 const SidebarWidget = ({ children, poweredBy }) => {
   return (

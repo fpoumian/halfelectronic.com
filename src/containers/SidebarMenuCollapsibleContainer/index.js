@@ -22,10 +22,6 @@ class SidebarMenuCollapsibleContainer extends Component {
     label: PropTypes.string
   }
 
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const { children, label } = this.props
     const { open, loaded } = this.state

@@ -1,5 +1,5 @@
 .wrapper {
-  composes: header-wrapper from "styles/base.pcss";
+  composes: header-wrapper from "styles/base.module.css";
   @media (--tablet) {
     align-items: center;
   }

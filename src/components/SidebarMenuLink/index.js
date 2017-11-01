@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "phenomic"
+import Link from 'gatsby-link'
 import PropTypes from "prop-types"
 
 const SidebarMenuLink = props => {

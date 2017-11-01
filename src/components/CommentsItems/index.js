@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from "react"
 
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 import ReactDisqusThread from "react-disqus-thread"
 import { slugify } from "utils/urls"
 

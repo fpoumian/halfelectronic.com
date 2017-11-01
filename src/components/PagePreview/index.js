@@ -1,15 +1,15 @@
 import React, { PropTypes } from "react"
-import { Link } from "phenomic"
+import Link from "gatsby-link"
 import { AllHtmlEntities } from 'html-entities'
 
 import Tag from "components/Tag"
 import Container from "components/Container"
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 import { getMainTag, getTagURL, normalizeTagForLabel } from "utils/tags"
 
 const entities = new AllHtmlEntities()
 
-const PagePreview = ({ __url, title, date, description, tags, params }) => {
+const PagePreview = ({ path, title, date, excerpt, tags, params }) => {
   const pageDate = date ? new Date(date) : null
   const mainTag =
     params && typeof params.tag !== "undefined" ? params.tag : getMainTag(tags)
@@ -34,12 +34,12 @@ const PagePreview = ({ __url, title, date, description, tags, params }) => {
             </div>}
         </div>
         <h2>
-          <Link to={__url} className={styles.title}>
+          <Link to={path} className={styles.title}>
             {entities.decode(title)}
           </Link>
         </h2>
         <div className={styles.description}>
-          <p>{description}</p>{" "}
+          <p>{excerpt}</p>{" "}
         </div>
       </article>
     </Container>
@@ -48,7 +48,7 @@ const PagePreview = ({ __url, title, date, description, tags, params }) => {
 
 PagePreview.propTypes = {
   params: PropTypes.object,
-  __url: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string,
   description: PropTypes.string,

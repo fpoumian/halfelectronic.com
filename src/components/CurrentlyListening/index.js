@@ -5,7 +5,7 @@ import lastFMLogo from "./lastfm-logo.gif"
 import Track from "components/Track"
 import SidebarWidgetItem from "components/SidebarWidgetItem"
 import SidebarWidget from "components/SidebarWidget"
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 
 class CurrentlyListening extends Component {
   renderCurrentlyListeningTracks() {

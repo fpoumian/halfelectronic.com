@@ -1,0 +1,10 @@
+.sidebar-submenu-item {
+  composes: contentFontFamily from 'styles/base.module.css';
+  font-size: 0.7rem;
+  line-height: normal;
+}
+
+.sidebar-submenu-wrapper {
+  margin: 0;
+  padding-top: 1rem;
+}

@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "halfelectronic.com",
     author: "Fernando Poumian",
+    siteUrl: "https://www.halfelectronic.com"
   },
   plugins: [
     {
@@ -43,11 +44,17 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    // {
+    //   resolve: "gatsby-plugin-typography",
+    //   options: {
+    //     pathToConfigModule: "src/utils/typography",
+    //   },
+    // },
     {
-      resolve: "gatsby-plugin-typography",
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        pathToConfigModule: "src/utils/typography",
-      },
-    },
+        fonts: [`Montserrat`, `Noto Serif`, `Varela Round`]
+      }
+    }
   ],
 }

@@ -1,5 +1,5 @@
 ---
-title: New Beginnings
+title: Using AWS API Gateway as a reverse proxy in serverless applications
 date: "2015-05-28T22:40:32.169Z"
 path: "/hi-folks/"
 ---

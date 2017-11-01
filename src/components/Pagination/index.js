@@ -3,7 +3,7 @@ import { joinUri } from "phenomic"
 import Button from "components/Button"
 import Container from "components/Container"
 
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 
 const Pagination = ({ query, baseURL }) => {
   const next = query.getNextPageNumber() // older posts

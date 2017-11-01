@@ -2,7 +2,7 @@ import React, { PropTypes } from "react"
 import Typist from "react-typist"
 
 import CoverHeader from "components/CoverHeader"
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 
 const GenericHeader = props => {
   const { wrapper, heading } = styles

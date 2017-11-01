@@ -2,7 +2,7 @@ import React, { PropTypes } from "react"
 const scrollToElement =
   typeof window !== "undefined" ? require("scroll-to-element") : null
 
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 import Tag from "components/Tag"
 
 const HomepageHeaderButtons = ({ headingTyped }) => {

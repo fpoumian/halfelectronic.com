@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import distanceInWordsStrict from "date-fns/distance_in_words_strict"
 
 import SoundBars from "components/SoundBars"
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 
 const getDistanceFromNow = dateToCompare =>
   distanceInWordsStrict(new Date(), dateToCompare)

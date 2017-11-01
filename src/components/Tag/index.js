@@ -1,6 +1,6 @@
 import React, { PropTypes } from "react"
-import { Link } from "phenomic"
-import styles from "./index.pcss"
+import Link from "gatsby-link"
+import styles from "./index.module.css"
 
 const Tag = ({ link, label, bgStyle, onClick }) => {
   return (

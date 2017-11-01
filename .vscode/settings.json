@@ -1,0 +1,6 @@
+{
+    "path-autocomplete.pathMappings": {
+        "components": "${workspace}/src/components",
+        "containers": "${workspace}/src/containers"
+    }
+}

@@ -3,13 +3,13 @@ import React, { PropTypes } from "react"
 import PagePreview from "components/PagePreview"
 import NoPosts from "components/NoPosts"
 
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 
 const PostsList = ({ posts, params }) => {
   function renderPostPreviews() {
     return posts.map(post =>
-      <li key={post.title}>
-        <PagePreview {...post} params={params} />
+      <li key={post.node.frontmatter.title}>
+        <PagePreview {...post.node.frontmatter} excerpt={post.node.excerpt} params={params} tags={["tag1", "tag2"]}/>
       </li>
     )
   }

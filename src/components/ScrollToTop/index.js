@@ -1,5 +1,5 @@
 import React, { PropTypes } from "react"
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 import ArrowUpIcon from "react-icons/lib/fa/arrow-circle-o-up"
 const scrollToElement =
   typeof window !== "undefined" ? require("scroll-to-element") : null

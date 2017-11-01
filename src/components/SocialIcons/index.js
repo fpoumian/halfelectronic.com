@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 const reactShare = typeof window !== "undefined" ? require("react-share") : null
 
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 
 const SocialIcons = ({ url }) => {
   if (!reactShare) return null

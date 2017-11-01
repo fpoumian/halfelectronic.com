@@ -1,16 +1,15 @@
 import React, { PropTypes } from "react"
-import { joinUri } from "phenomic"
 
 import Tag from "components/Tag"
 import Container from "components/Container"
 import SocialIcons from "components/SocialIcons"
 import { getTagURL, normalizeTagForLabel } from "utils/tags"
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 
 const PostBottom = ({ tags, url }) => {
   const secondaryTags = tags.length > 1 ? tags.slice(1) : null
   const mainTag = tags[0]
-  const permalink = joinUri(process.env.PHENOMIC_USER_URL, url)
+  const permalink = url
 
   function generateSecondaryTagsComponents() {
     return secondaryTags.map((tag, index) =>

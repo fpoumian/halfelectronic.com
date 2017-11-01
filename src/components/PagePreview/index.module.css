@@ -20,7 +20,7 @@
 
 .title {
   align-self: center;
-  font-weight: 900;
+/*   font-weight: 900; */
   color: var(--colorPrimaryDark);
 }
 

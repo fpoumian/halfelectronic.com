@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import Book from "components/Book"
 import SidebarWidgetItem from "components/SidebarWidgetItem"
 import SidebarWidget from "components/SidebarWidget"
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 import goodReadsLogo from "./goodreads.png"
 
 class CurrentlyReading extends Component {

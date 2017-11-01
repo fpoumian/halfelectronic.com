@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 
 // TODO: Make sure a font-family is explicitly set for this component
 const Book = ({ title, link, author }) => {

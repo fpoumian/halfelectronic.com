@@ -1,13 +1,14 @@
 import React, { PropTypes } from "react"
 
-import styles from "./index.pcss"
+import styles from "./index.module.css"
+import coverBg from './cover-bg.jpg'
 
 const Cover = ({ children }) => {
   return (
     <section
       className={styles.hero}
       style={{
-        backgroundImage: `url(/assets/cover-bg.jpg)`
+        backgroundImage: `url(${coverBg})`
       }}
     >
       <div className={styles.header}>

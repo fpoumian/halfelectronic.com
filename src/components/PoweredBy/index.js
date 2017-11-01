@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 
 const PoweredBy = ({ url, logo, name }) => {
   return (

@@ -1,5 +1,5 @@
 .wrapper {
-  composes: sidebar-submenu-wrapper from "styles/sidebar.pcss";
+  composes: sidebar-submenu-wrapper from "styles/sidebar.module.css";
 }
 
 .item-list {

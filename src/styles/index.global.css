@@ -1,0 +1,131 @@
+/* Using global sytles is not recommended, prefer local styles via CSS Modules */
+
+/*
+ * box model like it should be
+ *
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+ html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  ::-moz-selection {
+    background: var(--accentColorHover);
+    color: #ffffff
+  }
+  
+  ::selection {
+    background: var(--accentColorHover);
+    color: #ffffff
+  }
+  
+  ul {
+    margin: 0;
+  }
+  
+  /*
+   * kill document defaults margin & padding. We all do that all the time, right ?
+   */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /*
+   * page styles
+   */
+  html {
+    min-height: 100%;
+    background: #fff;
+  }
+  
+  body {
+    color: var(--colorText);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: var(--mainFontFamily)
+  }
+  
+  /*
+   * .phenomic-HeadingAnchor
+   *
+   * anchors for markdown headings, generated via markdown renderer, so require
+   * global styling
+   */
+  @custom-selector :--headings h1, h2, h3, h4, h5, h6;
+  
+  @custom-selector :--bodyContentElements h1,h2,h3,h4,h5,h6, ol, p, ul, pre;
+  
+  :--headings {
+    position: relative;
+    font-family: var(--altFontFamily);
+  }
+  
+  :root {
+    --phenomic-HeadingAnchor-width: 1.4rem;
+    --phenomic-HeadingAnchor-margin: 0.4rem;
+    --blockquoteDivider: {
+      display: block;
+      width: 60%;
+      height: 1px;
+      content: '';
+      background: #ededed;
+      margin: 60px auto 40px;
+    }
+  }
+  
+  .phenomic-HeadingAnchor {
+    display: inline-block;
+    text-align: center;
+    margin-left: calc(-1 * (var(--phenomic-HeadingAnchor-width) + var(--phenomic-HeadingAnchor-margin)));
+    margin-right: var(--phenomic-HeadingAnchor-margin);
+    width: var(--phenomic-HeadingAnchor-width);
+    line-height: var(--phenomic-HeadingAnchor-width);
+    text-decoration: none;
+    opacity: 0.1;
+    transition: opacity 0.2s;
+  
+    @nest :--headings:hover & {
+      opacity: 1;
+    }
+  }
+  
+  /* minimal styling, prefer removing this and use local styles */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  p {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+  }
+  
+  p, li {
+    font-family: var(--contentFontFamily);
+    font-size: var(--contentFontSize);
+    line-height: var(--contentLineHeight);
+    color: var(--darkGray);
+    @media (--mobile-m) {
+      font-size: calc(var(--contentFontSize) + 0.1);
+    }
+  }
+  
+  hr {
+    border: 0;
+    height: 1px;
+    background: var(--colorNeutral);
+    opacity: 0.2;
+    margin: 2rem 0;
+  }
+  
+  .bm-burger-button button {
+    cursor: pointer;
+  }

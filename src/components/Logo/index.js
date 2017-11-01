@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 import cx from "classnames"
 
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 
 const Logo = ({ lightBg, big, animated }) => {
   // expressed in REM units

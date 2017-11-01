@@ -1,10 +1,10 @@
-import React from "react"
+import React from 'react'
 
-import SidebarMenuItem from "components/SidebarMenuItem"
-import SidebarMenuCollapsibleContainer from "containers/SidebarMenuCollapsibleContainer"
-import SidebarMenuLink from "components/SidebarMenuLink"
-import CurrentlyReadingContainer from "containers/CurrentlyReadingContainer"
-import CurrentlyListeningContainer from "containers/CurrentlyListeningContainer"
+import SidebarMenuItem from 'components/SidebarMenuItem'
+import SidebarMenuCollapsibleContainer from 'containers/SidebarMenuCollapsibleContainer'
+import SidebarMenuLink from 'components/SidebarMenuLink'
+import CurrentlyReadingContainer from 'containers/CurrentlyReadingContainer'
+import CurrentlyListeningContainer from 'containers/CurrentlyListeningContainer'
 
 const SidebarMenu = () => {
   return (

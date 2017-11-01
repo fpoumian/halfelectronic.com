@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import FaAngleDown from "react-icons/lib/fa/angle-down"
 import FaAngleUp from "react-icons/lib/fa/angle-up"
 
-import styles from "./index.pcss"
+import styles from "./index.module.css"
 
 const SidebarMenuCollapsible = ({ isOpen, children, label, onClick }) => {
   return (
