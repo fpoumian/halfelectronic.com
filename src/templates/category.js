@@ -7,9 +7,9 @@ import PostsList from 'components/PostsList'
 import ArchiveHeader from 'components/ArchiveHeader'
 import Cover from 'components/Cover'
 
-class TagArchive extends React.Component {
+class CategoryArchive extends React.Component {
   render() {
-    const { title, post } = this.props.data.contentfulTag
+    const { title, post } = this.props.data.contentfulCategory
     return (
       <div>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
@@ -22,30 +22,26 @@ class TagArchive extends React.Component {
   }
 }
 
-TagArchive.propTypes = {
+CategoryArchive.propTypes = {
   data: PropTypes.object,
 }
 
-export default TagArchive
+export default CategoryArchive
 
 export const pageQuery = graphql`
-  query TagArchiveQuery($id: String!) {
+  query CategoryArchiveQuery($id: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    contentfulTag(id: { eq: $id }) {
+    contentfulCategory(id: { eq: $id }) {
       title
       slug
       post {
-        tag {
-          title
-          slug
-        }
         category {
-          slug
           title
+          slug
         }
         title {
           title

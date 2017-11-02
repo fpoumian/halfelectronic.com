@@ -93,6 +93,42 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         })
       })
       .then(() => {
+        // We then query for all the items of type Category in Contentful
+        graphql(
+          `
+            {
+              allContentfulCategory {
+                edges {
+                  node {
+                    slug
+                    id
+                  }
+                }
+              }
+            }
+          `
+        ).then(result => {
+          if (result.errors) {
+            reject(result.errors)
+          }
+
+          // Create Category pages
+          const categoryTemplate = path.resolve('./src/templates/category.js')
+
+          result.data.allContentfulCategory.edges.forEach(edge => {
+            createPage({
+              // Each page is required to have a 'path' as well
+              // as a template componnet.
+              path: `/category/${edge.node.slug}/`,
+              component: categoryTemplate,
+              context: {
+                id: edge.node.id,
+              },
+            })
+          })
+        })
+      })
+      .then(() => {
         // We then query for all the items of type Tag in Contentful
         graphql(
           `
@@ -112,7 +148,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             reject(result.errors)
           }
 
-          // Create Post pages
+          // Create Tag pages
           const tagTemplate = path.resolve('./src/templates/tag.js')
 
           result.data.allContentfulTag.edges.forEach(edge => {

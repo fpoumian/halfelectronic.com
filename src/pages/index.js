@@ -1,15 +1,10 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
-import Bio from 'components/Bio'
 import PostsList from 'components/PostsList'
-import ArchiveHeader from 'components/ArchiveHeader'
 import HomePageHeaderContainer from 'containers/HomePageHeaderContainer'
 import Cover from 'components/Cover'
-
-import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
   render() {
@@ -23,23 +18,17 @@ class BlogIndex extends React.Component {
         <Cover bgImage="/assets/header-bg.jpg">
           <HomePageHeaderContainer {...this.props} />
         </Cover>
-        <PostsList
-          posts={posts}
-          params={{}}
-          tags={[{ title: 'Tag 1', slug: 'tag-1' }]}
-        />
+        <PostsList posts={posts} params={{}} />
       </div>
     )
   }
 }
 
-BlogIndex.propTypes = {
-  route: React.PropTypes.object,
-}
+BlogIndex.propTypes = {}
 
 export default BlogIndex
 
-export const BlogIndexQuery = graphql`
+export const pageQuery = graphql`
   query IndexQuery {
     site {
       siteMetadata {
@@ -49,6 +38,14 @@ export const BlogIndexQuery = graphql`
     allContentfulPost {
       edges {
         node {
+          tag {
+            title
+            slug
+          }
+          category {
+            slug
+            title
+          }
           childContentfulPostBodyTextNode {
             childMarkdownRemark {
               excerpt

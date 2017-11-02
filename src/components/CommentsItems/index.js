@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import get from 'lodash/get'
 
 import styles from './index.module.css'
@@ -31,7 +32,8 @@ class CommentsItems extends Component {
           <ReactDisqusThread
             shortname={get(
               this.props,
-              'data.site.siteMetadata.disqus.shortname'
+              'data.site.siteMetadata.disqus.shortname',
+              'undefined'
             )}
             identifier={slugify(title)}
             title={title}
@@ -55,14 +57,14 @@ CommentsItems.contextTypes = {
 
 export default CommentsItems
 
-export const commentsItemsQuery = graphql`
-  query DisqusMetadata {
-    site {
-      siteMetadata {
-        disqus {
-          shortname
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query DisqusMetadata {
+//     site {
+//       siteMetadata {
+//         disqus {
+//           shortname
+//         }
+//       }
+//     }
+//   }
+// `

@@ -1,18 +1,25 @@
-import React, { PropTypes } from "react"
-import Link from "gatsby-link"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Link from 'gatsby-link'
 import { AllHtmlEntities } from 'html-entities'
 
-import Tag from "components/Tag"
-import Container from "components/Container"
-import styles from "./index.module.css"
-import { getMainTag, getTagURL, normalizeTagForLabel } from "utils/tags"
+import Tag from 'components/Tag'
+import Container from 'components/Container'
+import styles from './index.module.css'
 
 const entities = new AllHtmlEntities()
 
-const PagePreview = ({ slug, title , date, excerpt, tags, params }) => {
+const PagePreview = ({
+  slug,
+  title,
+  date,
+  excerpt,
+  tags,
+  category,
+  params,
+}) => {
   const pageDate = date ? new Date(date) : null
-  const mainTag = tags[0]
-    // params && typeof params.tag !== "undefined" ? params.tag : getMainTag(tags)
+
   return (
     <Container>
       <article className={styles.wrapper}>
@@ -20,18 +27,19 @@ const PagePreview = ({ slug, title , date, excerpt, tags, params }) => {
           {
             <div className={styles.tag}>
               <Tag
-                link={getTagURL(mainTag.slug)}
+                link={`category/${category.slug}`}
                 bgStyle="dark"
-                label={normalizeTagForLabel(mainTag.title)}
+                label={category.title}
               />
             </div>
           }
-          {pageDate &&
+          {pageDate && (
             <div className={styles.date}>
               <time key={pageDate.toISOString()}>
                 {pageDate.toDateString()}
               </time>
-            </div>}
+            </div>
+          )}
         </div>
         <h2>
           <Link to={`/post/` + slug} className={styles.title}>
@@ -39,7 +47,7 @@ const PagePreview = ({ slug, title , date, excerpt, tags, params }) => {
           </Link>
         </h2>
         <div className={styles.description}>
-          <p>{excerpt}</p>{" "}
+          <p>{excerpt}</p>
         </div>
       </article>
     </Container>
@@ -51,11 +59,12 @@ PagePreview.propTypes = {
   slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string,
-  description: PropTypes.string,
+  excerpt: PropTypes.string,
+  category: PropTypes.object,
   tags: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.arrayOf(PropTypes.string)
-  ])
+    PropTypes.arrayOf(PropTypes.object),
+  ]),
 }
 
 export default PagePreview

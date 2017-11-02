@@ -1,6 +1,7 @@
-import React, { PropTypes } from "react"
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import styles from "./index.module.css"
+import styles from './index.module.css'
 import coverBg from './cover-bg.jpg'
 
 const Cover = ({ children }) => {
@@ -8,20 +9,16 @@ const Cover = ({ children }) => {
     <section
       className={styles.hero}
       style={{
-        backgroundImage: `url(${coverBg})`
+        backgroundImage: `url(${coverBg})`,
       }}
     >
-      <div className={styles.header}>
-        {children}
-      </div>
+      <div className={styles.header}>{children}</div>
     </section>
   )
 }
 
 Cover.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 }
-
-Cover.defaultProps = {}
 
 export default Cover

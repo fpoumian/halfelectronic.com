@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 
-import styles from "./index.module.css"
+import styles from './index.module.css'
 
-const Footer = () =>
+const Footer = () => (
   <footer className={styles.footer}>
     {/* If you like Phenomic, this is a way to share the love ;) */}
     <div className={styles.info}>
@@ -16,9 +16,7 @@ const Footer = () =>
         href="https://facebook.github.io/react/"
         className={styles.phenomicReference}
       >
-        <span className={styles.phenomicReferenceName}>
-          {`React`}
-        </span>
+        <span className={styles.phenomicReferenceName}>{`React`}</span>
       </a>
       {` and `}
       <a
@@ -32,5 +30,6 @@ const Footer = () =>
       </a>
     </div>
   </footer>
+)
 
 export default Footer

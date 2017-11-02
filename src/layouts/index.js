@@ -21,10 +21,10 @@ class Template extends React.Component {
     return (
       <RootContainer>
         <Content>
-            <SidebarContainer />
-            <Header />
-            {children()}
-            <Footer />
+          <SidebarContainer />
+          <Header />
+          {children()}
+          <Footer />
         </Content>
       </RootContainer>
     )

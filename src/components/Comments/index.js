@@ -1,7 +1,7 @@
-import React, { PropTypes } from "react"
+import React, { PropTypes } from 'react'
 
-import CommentsToggle from "components/CommentsToggle"
-import CommentsItems from "components/CommentsItems"
+import CommentsToggle from 'components/CommentsToggle'
+import CommentsItems from 'components/CommentsItems'
 
 const Comments = ({ open, onToggleClick, url, title }) => {
   return (
@@ -16,7 +16,7 @@ Comments.propTypes = {
   open: PropTypes.bool,
   onToggleClick: PropTypes.func,
   url: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
 }
 
 export default Comments

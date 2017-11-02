@@ -1,19 +1,19 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
-import Comments from "components/Comments"
+import Comments from 'components/Comments'
 
 class CommentsContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      open: false
+      open: false,
     }
     this.handleToggleClick = this.handleToggleClick.bind(this)
   }
 
   handleToggleClick() {
     this.setState({
-      open: !this.state.open
+      open: !this.state.open,
     })
   }
 

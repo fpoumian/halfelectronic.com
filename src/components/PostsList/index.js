@@ -1,11 +1,12 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 import PagePreview from 'components/PagePreview'
 import NoPosts from 'components/NoPosts'
 
 import styles from './index.module.css'
 
-const PostsList = ({ posts, params, tags }) => {
+const PostsList = ({ posts, params }) => {
   function renderPostPreviews() {
     return posts.map(post => (
       <li key={post.title.id}>
@@ -16,7 +17,8 @@ const PostsList = ({ posts, params, tags }) => {
             post.childContentfulPostBodyTextNode.childMarkdownRemark.excerpt
           }
           params={params}
-          tags={tags}
+          tags={[...post.tag]}
+          category={post.category}
         />
       </li>
     ))

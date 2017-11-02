@@ -1,10 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
 import get from 'lodash/get'
 import path from 'path'
 
-import Bio from 'components/Bio'
 import ContentBody from 'components/ContentBody'
 import PostHeader from 'components/PostHeader'
 import PostBottom from 'components/PostBottom'
@@ -12,7 +11,6 @@ import Container from 'components/Container'
 import CommentsContainer from 'containers/CommentsContainer'
 import Cover from 'components/Cover'
 
-import { rhythm, scale } from '../utils/typography'
 import styles from './blog-post.module.css'
 
 class BlogPostTemplate extends React.Component {
@@ -39,7 +37,7 @@ class BlogPostTemplate extends React.Component {
             title={post.title.title}
             excerpt={''}
             bgStyle={'dark'}
-            tags={[{ title: 'Tag 1', slug: 'tag-1' }]}
+            category={post.category}
           />
         </Cover>
         <Container style={{ marginTop: '8vh', marginBottom: '4vh' }}>
@@ -60,7 +58,11 @@ class BlogPostTemplate extends React.Component {
           <div className={styles.date}>{`Published on: ${post.date}`}</div>
         </Container>
 
-        <PostBottom tags={['tag1', 'tag2']} url={postPermalink} />
+        <PostBottom
+          tags={[...post.tag]}
+          url={postPermalink}
+          category={post.category}
+        />
 
         <CommentsContainer url={'/path'} title={post.title.title} />
       </div>
@@ -70,10 +72,13 @@ class BlogPostTemplate extends React.Component {
 
 export default BlogPostTemplate
 
+BlogPostTemplate.propTypes = {
+  data: PropTypes.object,
+}
 
 // Use GraphQL to query specific post using the slug
 // we passed in the context object in gatsby-node.js
-export const postQuery = graphql`
+export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
@@ -85,6 +90,14 @@ export const postQuery = graphql`
     contentfulPost(slug: { eq: $slug }) {
       title {
         title
+      }
+      category {
+        title
+        slug
+      }
+      tag {
+        title
+        slug
       }
       date
       slug
