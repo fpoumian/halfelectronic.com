@@ -1,24 +1,20 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import PropTypes from 'prop-types'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
-import Bio from 'components/Bio'
 import PostsList from 'components/PostsList'
 import ArchiveHeader from 'components/ArchiveHeader'
-import HomePageHeaderContainer from 'containers/HomePageHeaderContainer'
 import Cover from 'components/Cover'
 
-import { rhythm } from '../utils/typography'
-
 class TagArchive extends React.Component {
-  render() { 
-    const { title, slug, post } = this.props.data.contentfulTag
+  render() {
+    const { title, post } = this.props.data.contentfulTag
     return (
       <div>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
         <Cover bgImage="/assets/header-bg.jpg">
-          <HomePageHeaderContainer {...this.props} />
+          <ArchiveHeader title={title} />
         </Cover>
         <PostsList
           posts={post}
@@ -31,7 +27,7 @@ class TagArchive extends React.Component {
 }
 
 TagArchive.propTypes = {
-  route: React.PropTypes.object,
+  data: PropTypes.object,
 }
 
 export default TagArchive

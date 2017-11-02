@@ -1,19 +1,28 @@
 {
   "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended"
-    ],
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "standard",
+    "prettier"
+  ],
   "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
+    "ecmaVersion": 6,
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
     }
   },
-  "plugins": [
-      "react"
-  ],
+  "plugins": ["prettier", "react"],
   "env": {
     "es6": true
+  },
+  "rules": {
+    "prettier/prettier": [
+      "warn",
+      { "singleQuote": true, "semi": false, "trailingComma": "es5" }
+    ]
+  },
+  "globals": {
+    "graphql": true
   }
 }

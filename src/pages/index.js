@@ -13,8 +13,9 @@ import { rhythm } from '../utils/typography'
 
 class BlogIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allContentfulPost.edges').map(post => post.node)
+    const posts = get(this, 'props.data.allContentfulPost.edges').map(
+      post => post.node
+    )
 
     return (
       <div>
@@ -22,7 +23,11 @@ class BlogIndex extends React.Component {
         <Cover bgImage="/assets/header-bg.jpg">
           <HomePageHeaderContainer {...this.props} />
         </Cover>
-        <PostsList posts={posts} params={{}} tags={[{ title: 'Tag 1', slug: 'tag-1' }]} />
+        <PostsList
+          posts={posts}
+          params={{}}
+          tags={[{ title: 'Tag 1', slug: 'tag-1' }]}
+        />
       </div>
     )
   }
@@ -45,7 +50,7 @@ export const BlogIndexQuery = graphql`
       edges {
         node {
           childContentfulPostBodyTextNode {
-            childMarkdownRemark{
+            childMarkdownRemark {
               excerpt
               html
             }
