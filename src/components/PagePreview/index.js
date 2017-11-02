@@ -34,7 +34,7 @@ const PagePreview = ({ slug, title , date, excerpt, tags, params }) => {
             </div>}
         </div>
         <h2>
-          <Link to={`/` + slug} className={styles.title}>
+          <Link to={`/post/` + slug} className={styles.title}>
             {entities.decode(title)}
           </Link>
         </h2>

@@ -17,26 +17,26 @@ import styles from './blog-post.module.css'
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
+    const post = this.props.data.contentfulPost
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
-    const postPermalink = path.join(siteUrl, post.frontmatter.path)
+    const postPermalink = path.join(siteUrl, 'post', post.slug)
     const head = {
       featured: false,
-      title: 'This is the title'
+      title: 'This is the title',
     }
 
     return (
       <div>
-        <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
+        <Helmet title={`${post.title.title} | ${siteTitle}`} />
         <Cover
           bgImage={''}
           bgStyle={'dark'}
-          title={post.frontmatter.title}
+          title={post.title.title}
           excerpt={'excerpt'}
         >
           <PostHeader
-            title={post.frontmatter.title}
+            title={post.title.title}
             excerpt={''}
             bgStyle={'dark'}
             tags={['tag1', 'tag2']}
@@ -53,14 +53,16 @@ class BlogPostTemplate extends React.Component {
               />
             </div>
           )}
-          <ContentBody body={post.html} isLoading={false} />
-          <div className={styles.date}>{`Published on: ${post.frontmatter
-            .date}`}</div>
+          <ContentBody
+            body={post.childContentfulPostBodyTextNode.childMarkdownRemark.html}
+            isLoading={false}
+          />
+          <div className={styles.date}>{`Published on: ${post.date}`}</div>
         </Container>
 
         <PostBottom tags={['tag1', 'tag2']} url={postPermalink} />
 
-        <CommentsContainer url={'/path'} title={post.frontmatter.title} />
+        <CommentsContainer url={'/path'} title={post.title.title} />
       </div>
     )
   }
@@ -69,7 +71,7 @@ class BlogPostTemplate extends React.Component {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
@@ -77,13 +79,16 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
-      id
-      html
-      frontmatter {
+    contentfulPost(slug: { eq: $slug }) {
+      title {
         title
-        date(formatString: "MMMM DD, YYYY")
-        path
+      }
+      date
+      slug
+      childContentfulPostBodyTextNode {
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }
