@@ -11,51 +11,51 @@ import Cover from 'components/Cover'
 
 import { rhythm } from '../utils/typography'
 
-class BlogIndex extends React.Component {
-  render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allContentfulPost.edges').map(post => post.node)
-
+class TagArchive extends React.Component {
+  render() { 
+    const { title, slug, post } = this.props.data.contentfulTag
     return (
       <div>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
         <Cover bgImage="/assets/header-bg.jpg">
           <HomePageHeaderContainer {...this.props} />
         </Cover>
-        <PostsList posts={posts} params={{}} tags={[{ title: 'Tag 1', slug: 'tag-1' }]} />
+        <PostsList
+          posts={post}
+          params={{}}
+          tags={[{ title: 'Tag 1', slug: 'tag-1' }]}
+        />
       </div>
     )
   }
 }
 
-BlogIndex.propTypes = {
+TagArchive.propTypes = {
   route: React.PropTypes.object,
 }
 
-export default BlogIndex
+export default TagArchive
 
-export const BlogIndexQuery = graphql`
-  query IndexQuery {
+export const TagArchiveQuery = graphql`
+  query TagArchiveQuery($id: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    allContentfulPost {
-      edges {
-        node {
-          childContentfulPostBodyTextNode {
-            childMarkdownRemark{
-              excerpt
-              html
-            }
+    contentfulTag(id: { eq: $id }) {
+      title
+      slug
+      post {
+        title {
+          title
+          id
+        }
+        slug
+        childContentfulPostBodyTextNode {
+          childMarkdownRemark {
+            excerpt
           }
-          title {
-            id
-            title
-          }
-          date
-          slug
         }
       }
     }

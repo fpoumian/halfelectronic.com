@@ -5,16 +5,18 @@ import NoPosts from 'components/NoPosts'
 
 import styles from './index.module.css'
 
-const PostsList = ({ posts, params }) => {
+const PostsList = ({ posts, params, tags }) => {
   function renderPostPreviews() {
     return posts.map(post => (
-      <li key={post.node.title.id}>
+      <li key={post.title.id}>
         <PagePreview
-          {...post.node}
-          title={post.node.title.title}
-          excerpt={post.node.childContentfulPostBodyTextNode.childMarkdownRemark.excerpt}
+          {...post}
+          title={post.title.title}
+          excerpt={
+            post.childContentfulPostBodyTextNode.childMarkdownRemark.excerpt
+          }
           params={params}
-          tags={['tag1', 'tag2']}
+          tags={tags}
         />
       </li>
     ))

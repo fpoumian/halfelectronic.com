@@ -55,6 +55,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     // queries against the local Contentful graphql schema. Think of
     // it like the site has a built-in database constructed
     // from the fetched data that you can run queries against.
+
+    // We first query for all items of the content type Post
+    // from the Contentful API
     graphql(
       `
         {
@@ -67,28 +70,65 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
         }
       `
-    ).then(result => {
-      if (result.errors) {
-        reject(result.errors)
-      }
+    )
+      .then(result => {
+        if (result.errors) {
+          reject(result.errors)
+        }
 
-      // Create Post pages
-      const postTemplate = path.resolve('./src/templates/blog-post.js')
-      // We want to create a detailed page for each blog post.
-      // We'll just use the Contentful slug.
-      result.data.allContentfulPost.edges.forEach(edge => {
-        createPage({
-          // Each page is required to have a 'path' as well
-          // as a template componnet.
-          path: `/post/${edge.node.slug}/`,
-          component: postTemplate,
-          context: {
-            slug: edge.node.slug,
-          },
+        // Create Post pages
+        const postTemplate = path.resolve('./src/templates/blog-post.js')
+        // We want to create a detailed page for each blog post.
+        // We'll just use the Contentful slug.
+        result.data.allContentfulPost.edges.forEach(edge => {
+          createPage({
+            // Each page is required to have a 'path' as well
+            // as a template componnet.
+            path: `/post/${edge.node.slug}/`,
+            component: postTemplate,
+            context: {
+              slug: edge.node.slug,
+            },
+          })
         })
       })
-      resolve()
-    })
+      .then(() => {
+        // We then query for all the items of type Tag in Contentful
+        graphql(
+          `
+            {
+              allContentfulTag {
+                edges {
+                  node {
+                    id
+                    slug
+                  }
+                }
+              }
+            }
+          `
+        ).then(result => {
+          if (result.errors) {
+            reject(result.errors)
+          }
+
+          // Create Post pages
+          const tagTemplate = path.resolve('./src/templates/tag.js')
+
+          result.data.allContentfulTag.edges.forEach(edge => {
+            createPage({
+              // Each page is required to have a 'path' as well
+              // as a template componnet.
+              path: `/tag/${edge.node.slug}/`,
+              component: tagTemplate,
+              context: {
+                id: edge.node.id,
+              },
+            })
+          })
+          resolve()
+        })
+      })
   })
 }
 

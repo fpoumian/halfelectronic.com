@@ -39,7 +39,7 @@ class BlogPostTemplate extends React.Component {
             title={post.title.title}
             excerpt={''}
             bgStyle={'dark'}
-            tags={['tag1', 'tag2']}
+            tags={[{ title: 'Tag 1', slug: 'tag-1' }]}
           />
         </Cover>
         <Container style={{ marginTop: '8vh', marginBottom: '4vh' }}>
@@ -70,7 +70,10 @@ class BlogPostTemplate extends React.Component {
 
 export default BlogPostTemplate
 
-export const pageQuery = graphql`
+
+// Use GraphQL to query specific post using the slug
+// we passed in the context object in gatsby-node.js
+export const postQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {

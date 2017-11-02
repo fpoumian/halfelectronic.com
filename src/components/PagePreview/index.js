@@ -11,8 +11,8 @@ const entities = new AllHtmlEntities()
 
 const PagePreview = ({ slug, title , date, excerpt, tags, params }) => {
   const pageDate = date ? new Date(date) : null
-  const mainTag =
-    params && typeof params.tag !== "undefined" ? params.tag : getMainTag(tags)
+  const mainTag = tags[0]
+    // params && typeof params.tag !== "undefined" ? params.tag : getMainTag(tags)
   return (
     <Container>
       <article className={styles.wrapper}>
@@ -20,9 +20,9 @@ const PagePreview = ({ slug, title , date, excerpt, tags, params }) => {
           {
             <div className={styles.tag}>
               <Tag
-                link={getTagURL(mainTag)}
+                link={getTagURL(mainTag.slug)}
                 bgStyle="dark"
-                label={normalizeTagForLabel(mainTag)}
+                label={normalizeTagForLabel(mainTag.title)}
               />
             </div>
           }
