@@ -9,7 +9,7 @@ import { getMainTag, getTagURL, normalizeTagForLabel } from "utils/tags"
 
 const entities = new AllHtmlEntities()
 
-const PagePreview = ({ path, title, date, excerpt, tags, params }) => {
+const PagePreview = ({ slug, title , date, excerpt, tags, params }) => {
   const pageDate = date ? new Date(date) : null
   const mainTag =
     params && typeof params.tag !== "undefined" ? params.tag : getMainTag(tags)
@@ -34,7 +34,7 @@ const PagePreview = ({ path, title, date, excerpt, tags, params }) => {
             </div>}
         </div>
         <h2>
-          <Link to={path} className={styles.title}>
+          <Link to={`/` + slug} className={styles.title}>
             {entities.decode(title)}
           </Link>
         </h2>
@@ -48,7 +48,7 @@ const PagePreview = ({ path, title, date, excerpt, tags, params }) => {
 
 PagePreview.propTypes = {
   params: PropTypes.object,
-  path: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string,
   description: PropTypes.string,

@@ -14,7 +14,7 @@ import { rhythm } from '../utils/typography'
 class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    const posts = get(this, 'props.data.allContentfulPost.edges')
 
     return (
       <div>
@@ -41,17 +41,21 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allContentfulPost {
       edges {
         node {
-          excerpt
-          frontmatter {
-            path
-            date(formatString: "DD MMMM, YYYY")
+          childContentfulPostBodyTextNode {
+            childMarkdownRemark{
+              excerpt
+              html
+            }
           }
-          frontmatter {
+          title {
+            id
             title
           }
+          date
+          slug
         }
       }
     }
