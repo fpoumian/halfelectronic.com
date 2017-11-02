@@ -1,40 +1,43 @@
-import React, { PropTypes, Component } from "react"
+import React, { PropTypes, Component } from 'react'
+import get from 'lodash/get'
 
-import styles from "./index.module.css"
-import ReactDisqusThread from "react-disqus-thread"
-import { slugify } from "utils/urls"
+import styles from './index.module.css'
+import ReactDisqusThread from 'react-disqus-thread'
+import { slugify } from 'utils/urls'
 
 const scrollToElement =
-  typeof window !== "undefined" ? require("scroll-to-element") : null
+  typeof window !== 'undefined' ? require('scroll-to-element') : null
 
 class CommentsItems extends Component {
   constructor(props, { metadata }) {
     super(props)
     this.props = props
-    this.metadata = metadata
   }
 
   componentDidMount() {
     if (scrollToElement) {
-      scrollToElement("#comments-list")
+      scrollToElement('#comments-list')
     }
   }
 
   render() {
     const { open, url, title } = this.props
-    const { shortname } = this.metadata.disqus
     return (
       <div
         id="comments-list"
-        className={styles.wrapper + " " + styles[open ? "open" : "closed"]}
+        className={styles.wrapper + ' ' + styles[open ? 'open' : 'closed']}
       >
-        {open &&
+        {open && (
           <ReactDisqusThread
-            shortname={shortname}
+            shortname={get(
+              this.props,
+              'data.site.siteMetadata.disqus.shortname'
+            )}
             identifier={slugify(title)}
             title={title}
             url={url}
-          />}
+          />
+        )}
       </div>
     )
   }
@@ -43,11 +46,23 @@ class CommentsItems extends Component {
 CommentsItems.propTypes = {
   open: PropTypes.bool,
   url: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 }
 
 CommentsItems.contextTypes = {
-  metadata: PropTypes.object.isRequired
+  metadata: PropTypes.object.isRequired,
 }
 
 export default CommentsItems
+
+export const commentsItemsQuery = graphql`
+  query DisqusMetadata {
+    site {
+      siteMetadata {
+        disqus {
+          shortname
+        }
+      }
+    }
+  }
+`
