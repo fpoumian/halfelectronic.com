@@ -4,12 +4,9 @@ import PropTypes from 'prop-types'
 import Tag from 'components/Tag'
 import Container from 'components/Container'
 import SocialIcons from 'components/SocialIcons'
-import { getTagURL, normalizeTagForLabel } from 'utils/tags'
 import styles from './index.module.css'
 
 const PostBottom = ({ tags, url, category }) => {
-  const secondaryTags = tags.length > 1 ? tags.slice(1) : null
-
   return (
     <Container style={{ marginTop: '4vh', marginBottom: '8vh' }}>
       <div className={styles.tags}>
@@ -51,7 +48,7 @@ const PostBottom = ({ tags, url, category }) => {
 PostBottom.propTypes = {
   tags: PropTypes.array,
   url: PropTypes.string,
-  category: PropTypes.object
+  category: PropTypes.object,
 }
 
 export default PostBottom

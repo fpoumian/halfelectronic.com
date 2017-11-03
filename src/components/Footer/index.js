@@ -21,12 +21,24 @@ const Footer = () => (
       {` and `}
       <a
         target="__blank"
-        href={process.env.PHENOMIC_HOMEPAGE}
+        href={`http://gatsbyjs.org/`}
         className={styles.phenomicReference}
       >
-        <span className={styles.phenomicReferenceName}>
-          {`<${process.env.PHENOMIC_NAME} />`}
-        </span>
+        <span className={styles.phenomicReferenceName}>{`Gatsby.js`}</span>
+      </a>
+    </div>
+    <div style={{ marginTop: '1rem' }}>
+      <a
+        href="https://www.contentful.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="https://images.contentful.com/fo9twyrwpveg/7F5pMEOhJ6Y2WukCa2cYws/398e290725ef2d3b3f0f5a73ae8401d6/PoweredByContentful_DarkBackground.svg"
+          _style="max-width:100px;width:100%;"
+          style={{ maxWidth: '100px', width: '100%' }}
+          alt="Powered by Contentful"
+        />
       </a>
     </div>
   </footer>

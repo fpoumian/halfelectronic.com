@@ -5,7 +5,7 @@
 .footer {
   text-align: center;
   background: var(--darkestGray);
-  padding: 2vh 0;
+  padding: 4vh 0;
   @media (--laptop) {
     display: flex;
     flex-direction: column;

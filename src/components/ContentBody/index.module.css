@@ -14,9 +14,9 @@
 .wrapper {
   margin: 4vh auto;
 
-  & :--headingElements {
+  /* & :--headingElements {
     margin-bottom: -1rem;
-  }
+  } */
 
   & p {
     margin: 2rem 0;
