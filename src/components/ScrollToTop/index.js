@@ -13,7 +13,7 @@ const ScrollToTop = ({ visible }) => {
 
   return (
     <div
-      onClick={() => scrollToElement('#phenomic')}
+      onClick={() => scrollToElement('#___gatsby')}
       className={styles.root}
       style={inline}
     >

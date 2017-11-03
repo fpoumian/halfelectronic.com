@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 import SidebarContainer from 'containers/SidebarContainer'
+import ScrollToTopContainer from 'containers/ScrollToTopContainer'
 import RootContainer from 'components/RootContainer'
 import Content from 'components/Content'
 
@@ -20,6 +21,7 @@ class Template extends React.Component {
           <Header />
           {children()}
           <Footer />
+          <ScrollToTopContainer />
         </Content>
       </RootContainer>
     )
