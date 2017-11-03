@@ -1,59 +1,48 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import PropTypes from 'prop-types'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-
-import Bio from 'components/Bio'
-import PostsList from 'components/PostsList'
-import ArchiveHeader from 'components/ArchiveHeader'
-import HomePageHeaderContainer from 'containers/HomePageHeaderContainer'
+import ContentBody from 'components/ContentBody/'
+import Container from 'components/Container/'
+import GenericHeader from 'components/GenericHeader'
 import Cover from 'components/Cover'
-
-import { rhythm } from '../utils/typography'
 
 class About extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allMarkdownRemark.edges')
-
     return (
       <div>
         <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
-        <Cover bgImage="/assets/header-bg.jpg">
-          <HomePageHeaderContainer {...this.props} />
+        <Cover>
+          <GenericHeader title={`About`} />
         </Cover>
-        <PostsList posts={posts} params={{}} />
+
+        <Container
+          style={{
+            marginTop: '8vh',
+            marginBottom: '8vh',
+          }}
+        >
+          <ContentBody
+            body={`
+            <h2>Who Am I?</h2>
+            <p>Duis irure fugiat ea ea. Irure ipsum elit ullamco fugiat deserunt
+            dolor tempor proident consequat do amet. Commodo culpa esse elit
+            duis quis aliqua irure sunt qui officia enim ea velit et. Sunt
+            consectetur pariatur esse quis do pariatur tempor elit consequat ea.
+            Magna adipisicing ea consequat sunt anim Lorem incididunt ipsum.
+            Aliqua dolor occaecat pariatur esse cillum exercitation deserunt.
+            Magna velit deserunt esse sit exercitation quis elit dolore ea
+            nostrud nisi velit dolore.</p>
+            `}
+          />
+        </Container>
       </div>
     )
   }
 }
 
 About.propTypes = {
-  route: React.PropTypes.object,
+  data: PropTypes.object,
 }
 
 export default About
-
-export const pageQuery = graphql`
-  query AboutQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          frontmatter {
-            path
-            date(formatString: "DD MMMM, YYYY")
-          }
-          frontmatter {
-            title
-          }
-        }
-      }
-    }
-  }
-`

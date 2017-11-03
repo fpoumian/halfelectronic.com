@@ -176,7 +176,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     customProperties: {
       variables: {
         mainColor: 'blue',
-        maxWidth: '40rem',
+        maxWidth: '43.5rem',
         accentColor: '#102b40',
         accentColorHover: '#009998',
         darkestGray: '#222326',

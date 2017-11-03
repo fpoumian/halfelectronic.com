@@ -1,8 +1,9 @@
-import React, { PropTypes } from "react"
-import Typist from "react-typist"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Typist from 'react-typist'
 
-import CoverHeader from "components/CoverHeader"
-import styles from "./index.module.css"
+import CoverHeader from 'components/CoverHeader'
+import styles from './index.module.css'
 
 const GenericHeader = props => {
   const { wrapper, heading } = styles
@@ -12,9 +13,7 @@ const GenericHeader = props => {
     <CoverHeader {...props}>
       <section className={wrapper}>
         <h1 className={heading}>
-          <Typist>
-            {title}
-          </Typist>
+          <Typist>{title}</Typist>
         </h1>
       </section>
     </CoverHeader>
@@ -22,7 +21,7 @@ const GenericHeader = props => {
 }
 
 GenericHeader.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
 }
 
 export default GenericHeader

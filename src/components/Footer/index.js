@@ -35,7 +35,6 @@ const Footer = () => (
       >
         <img
           src="https://images.contentful.com/fo9twyrwpveg/7F5pMEOhJ6Y2WukCa2cYws/398e290725ef2d3b3f0f5a73ae8401d6/PoweredByContentful_DarkBackground.svg"
-          _style="max-width:100px;width:100%;"
           style={{ maxWidth: '100px', width: '100%' }}
           alt="Powered by Contentful"
         />

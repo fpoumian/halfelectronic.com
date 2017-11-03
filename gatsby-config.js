@@ -49,7 +49,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        // trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
     `gatsby-plugin-offline`,
@@ -63,9 +63,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Montserrat`, `Noto Serif`, `Varela Round`],
+        fonts: [
+          `Montserrat:500`,
+          `Noto Serif:400,700`,
+          `Varela Round`,
+          `Oxygen`,
+        ],
       },
     },
-
   ],
 }
