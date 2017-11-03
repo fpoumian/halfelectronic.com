@@ -1,26 +1,26 @@
-import React, { Component } from "react"
-import PropTypes from "prop-types"
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
-import GoodReadsAPI from "api/GoodReadsAPI"
-import CurrentlyReading from "components/CurrentlyReading/index"
-import { mapResponseToBooks } from "utils/goodreads"
-import { parseXMLToJson } from "utils/data"
+import GoodReadsAPI from 'api/GoodReadsAPI'
+import CurrentlyReading from 'components/CurrentlyReading/index'
+import { mapResponseToBooks } from 'utils/goodreads'
+import { parseXMLToJson } from 'utils/data'
 
 class CurrentlyReadingContainer extends Component {
   state = {
     loaded: false,
-    books: []
+    books: [],
   }
 
   constructor(props) {
     super(props)
-    this.api = new GoodReadsAPI("65337089")
+    this.api = new GoodReadsAPI('65337089')
   }
 
   componentDidMount() {
     this.api
       .getUserCurrentlyReading()
-      .then(response => parseXMLToJson.call(null, response.data))
+      .then(response => parseXMLToJson(response.data))
       .then(mapResponseToBooks)
       .then(books => {
         this.setState({ books, loaded: true })
@@ -34,7 +34,7 @@ class CurrentlyReadingContainer extends Component {
 }
 
 CurrentlyReadingContainer.propTypes = {
-  loaded: PropTypes.bool
+  loaded: PropTypes.bool,
 }
 
 export default CurrentlyReadingContainer

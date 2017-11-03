@@ -1,18 +1,18 @@
-import React, { Component } from "react"
-import HomePageHeader from "components/HomepageHeader"
+import React, { Component } from 'react'
+import HomePageHeader from 'components/HomepageHeader'
 
 class HomePageHeaderContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      typed: false
+      typed: false,
     }
     this.handleHeadingTyped = this.handleHeadingTyped.bind(this)
   }
 
   handleHeadingTyped() {
     this.setState({
-      typed: true
+      typed: true,
     })
   }
 

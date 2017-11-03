@@ -1,14 +1,14 @@
-import React from "react"
-import Particles from "react-particles-js"
-import config from "./particlesjs-config.json"
+import React from 'react'
+import Particles from 'react-particles-js'
+import config from './particlesjs-config.json'
 
 const HeaderParticles = () => {
   const particlesStyles = {
-    background: "transparent",
-    position: "absolute",
-    left: "0",
-    top: "0",
-    zIndex: "0"
+    background: 'transparent',
+    position: 'absolute',
+    left: '0',
+    top: '0',
+    zIndex: '0',
   }
   return (
     <Particles

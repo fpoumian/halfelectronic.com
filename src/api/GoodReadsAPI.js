@@ -1,7 +1,7 @@
-import axios from "axios"
+import axios from 'axios'
 
 class GoodReadsAPI {
-  static endpoint = "https://exkvbtgog7.execute-api.us-east-1.amazonaws.com/prod/goodreads"
+  static endpoint = 'https://exkvbtgog7.execute-api.us-east-1.amazonaws.com/prod/goodreads'
 
   constructor(userId) {
     this._userId = userId
@@ -9,10 +9,10 @@ class GoodReadsAPI {
 
   getUserCurrentlyReading() {
     return axios({
-      method: "get",
+      method: 'get',
       url: `${GoodReadsAPI.endpoint}/user/${this
         ._userId}/shelves/currently-reading`,
-      responseType: "text"
+      responseType: 'text',
     })
   }
 }
