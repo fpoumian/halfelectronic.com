@@ -25,14 +25,29 @@ class About extends React.Component {
           <ContentBody
             body={`
             <h2>Who Am I?</h2>
-            <p>Duis irure fugiat ea ea. Irure ipsum elit ullamco fugiat deserunt
-            dolor tempor proident consequat do amet. Commodo culpa esse elit
-            duis quis aliqua irure sunt qui officia enim ea velit et. Sunt
-            consectetur pariatur esse quis do pariatur tempor elit consequat ea.
-            Magna adipisicing ea consequat sunt anim Lorem incididunt ipsum.
-            Aliqua dolor occaecat pariatur esse cillum exercitation deserunt.
-            Magna velit deserunt esse sit exercitation quis elit dolore ea
-            nostrud nisi velit dolore.</p>
+            <p>
+              My name is Fernando Poumián. I'm a full-stack web engineer with 5+ years of experience.
+              I specialize in creating modern, effective and scalable web solutions to the everyday challenges of this digital era.
+              I have a Computer Information Systems degree from the University of Texas at El Paso where I graduated with honors in 2012.
+              </p>
+              
+              <p>As a freelancer and independent consultant, I have worked with clients from all over the world, including the US, Spain, 
+                New Zealand and México — where I also currently reside. </p>
+              
+              <p>
+              I believe that good software development consist in using the right tool for the job. 
+              In my years of experience I have studied and worked with a wide variety of 
+              programming languages such as C#, Java, JavaScript, Python, Ruby and PHP, as well as with traditional 
+              MVC oriented frameworks and architectures such as Django, Ruby on Rails and Laravel.
+              </p>
+              
+              <p>
+                Nowadays, however, most of my stack is based around the ever growing Node.js/Javascript ecosystem. 
+                I'm a huge React enthusiast, and you will likely find me rambling about React at one point or another. 
+                This, in turn, has also sparked my interest in alternative programming and architectural paradigms 
+                such as Functional Programming and Serverless Architectures.
+              </p>
+              
             `}
           />
         </Container>

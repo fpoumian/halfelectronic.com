@@ -1,16 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './index.module.css'
+import componentStyles from './index.module.css'
 
-const ContentBody = ({ body }) => (
+const ContentBody = ({ body, style }) => (
   <section
-    className={styles.wrapper}
+    style={style ? { ...style } : {}}
+    className={componentStyles.wrapper}
     dangerouslySetInnerHTML={{ __html: body }}
   />
 )
 
 ContentBody.propTypes = {
   body: PropTypes.string,
+  style: PropTypes.object,
   isLoading: PropTypes.bool,
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'phenomic'
+import Link from 'gatsby-link'
 import styles from './index.module.css'
 
 const Button = ({ children, link }) => (
