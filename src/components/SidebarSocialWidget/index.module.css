@@ -8,14 +8,14 @@
 }
 
 .icons {
-  display: flex;
-  justify-content: space-between;
+  margin-top: 0.5rem;
   width: 60%;
 }
 
 .icon {
   font-size: 2rem;
   color: rgb(34, 35, 38);
+  margin-right: 0.5rem;
   @media (--tablet) {
     font-size: 2.5rem;
   }

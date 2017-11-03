@@ -47,7 +47,7 @@ class CommentsItems extends Component {
 CommentsItems.propTypes = {
   open: PropTypes.bool,
   url: PropTypes.string.isRequired,
-  slug: PropTypes.stirng.isRequired,
+  slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 }
 

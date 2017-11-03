@@ -5,6 +5,7 @@ import Logo from 'components/Logo/index'
 import styles from './index.module.css'
 import generateMenuStyles from './menu-styles'
 import SidebarMenu from 'components/SidebarMenu/index'
+import SidebarSocialWidget from 'components/SidebarSocialWidget'
 
 class SidebarContainer extends Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class SidebarContainer extends Component {
             <Logo lightBg={true} big={true} />
           </div>
           <SidebarMenu />
-          {/* <SidebarSocialWidget /> */}
+          <SidebarSocialWidget />
         </Menu>
       </aside>
     )

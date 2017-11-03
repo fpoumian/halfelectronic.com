@@ -1,21 +1,19 @@
 import React from 'react'
 
-import { FaGithub, FaTwitterSquare, FaQuestionCircle } from 'react-icons/lib/fa'
+import { FaGithub, FaTwitterSquare } from 'react-icons/lib/fa'
 import styles from './index.module.css'
 
 const SidebarSocialWidget = () => {
   return (
     <div className={styles.root}>
       <hr className={styles.divider} />
+      <span>Find me on:</span>
       <div className={styles.icons}>
-        <a href="#">
+        <a href="https://github.com/fpoumian" target="__blank">
           <FaGithub className={styles.icon} />
         </a>
-        <a href="#">
+        <a href="https://twitter.com/fernandopoumian" target="__blank">
           <FaTwitterSquare className={styles.icon} />
-        </a>
-        <a href="#">
-          <FaQuestionCircle className={styles.icon} />
         </a>
       </div>
     </div>
