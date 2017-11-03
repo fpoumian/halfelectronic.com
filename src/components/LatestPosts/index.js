@@ -1,10 +1,11 @@
-import React, { PropTypes } from "react"
-import PostsQuery from "lib/PostsQuery"
+import React from 'react'
+import PropTypes from 'prop-types'
+import PostsQuery from 'lib/PostsQuery'
 
-import PostsList from "components/PostsList"
+import PostsList from 'components/PostsList'
 
 const LatestPosts = (props, { collection }) => {
-  const queryFilterFn = item => item.layout === "Post"
+  const queryFilterFn = item => item.layout === 'Post'
   const query = new PostsQuery(collection, 3, null, queryFilterFn)
   const latestPosts = query.posts
 
@@ -16,11 +17,11 @@ const LatestPosts = (props, { collection }) => {
 }
 
 LatestPosts.propTypes = {
-  numberOfPosts: PropTypes.number
+  numberOfPosts: PropTypes.number,
 }
 
 LatestPosts.contextTypes = {
-  collection: PropTypes.array.isRequired
+  collection: PropTypes.array.isRequired,
 }
 
 export default LatestPosts

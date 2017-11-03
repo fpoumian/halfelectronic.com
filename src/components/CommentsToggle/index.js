@@ -1,18 +1,17 @@
-import React, { PropTypes } from "react"
-import CommentsIcon from "react-icons/lib/fa/comments-o"
+import React from 'react'
+import PropTypes from 'prop-types'
+import CommentsIcon from 'react-icons/lib/fa/comments-o'
 
-import styles from "./index.module.css"
+import styles from './index.module.css'
 
 const CommentsToggle = ({ onClick, open }) => {
-  const label = open ? "Comments" : "View Comments"
+  const label = open ? 'Comments' : 'View Comments'
 
   return (
     <div className={styles.wrapper} onClick={onClick}>
-      <div className={styles["label-wrapper"]}>
-        <CommentsIcon className={styles["comments-icon"]} />
-        <span className={styles.label}>
-          {label}
-        </span>
+      <div className={styles['label-wrapper']}>
+        <CommentsIcon className={styles['comments-icon']} />
+        <span className={styles.label}>{label}</span>
       </div>
     </div>
   )
@@ -20,7 +19,7 @@ const CommentsToggle = ({ onClick, open }) => {
 
 CommentsToggle.propTypes = {
   onClick: PropTypes.func,
-  open: PropTypes.bool
+  open: PropTypes.bool,
 }
 
 CommentsToggle.defaultProps = {}

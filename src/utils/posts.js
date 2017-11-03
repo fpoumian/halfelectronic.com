@@ -1,4 +1,4 @@
-import enhanceCollection from "phenomic/lib/enhance-collection"
+import enhanceCollection from 'phenomic/lib/enhance-collection'
 
 export const getPostsFromCollection = (
   collection,
@@ -8,8 +8,8 @@ export const getPostsFromCollection = (
 ) => {
   return enhanceCollection(collection, {
     filter: filterFn,
-    sort: "date",
-    reverse: true
+    sort: 'date',
+    reverse: true,
   }).slice(pagination, offset)
 }
 

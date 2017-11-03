@@ -1,7 +1,8 @@
-import React, { PropTypes } from "react"
-const reactShare = typeof window !== "undefined" ? require("react-share") : null
+import React from 'react'
+import PropTypes from 'prop-types'
+import styles from './index.module.css'
 
-import styles from "./index.module.css"
+const reactShare = typeof window !== 'undefined' ? require('react-share') : null
 
 const SocialIcons = ({ url }) => {
   if (!reactShare) return null
@@ -12,16 +13,16 @@ const SocialIcons = ({ url }) => {
     FacebookShareButton,
     TwitterShareButton,
     GooglePlusShareButton,
-    LinkedinShareButton
+    LinkedinShareButton,
   } = ShareButtons
-  const FacebookIcon = generateShareIcon("facebook")
-  const TwitterIcon = generateShareIcon("twitter")
-  const GooglePlusIcon = generateShareIcon("google")
-  const LinkedinIcon = generateShareIcon("linkedin")
+  const FacebookIcon = generateShareIcon('facebook')
+  const TwitterIcon = generateShareIcon('twitter')
+  const GooglePlusIcon = generateShareIcon('google')
+  const LinkedinIcon = generateShareIcon('linkedin')
 
   const iconProps = {
     size: 35,
-    round: true
+    round: true,
   }
 
   return (
@@ -43,7 +44,7 @@ const SocialIcons = ({ url }) => {
 }
 
 SocialIcons.propTypes = {
-  url: PropTypes.string
+  url: PropTypes.string,
 }
 
 export default SocialIcons

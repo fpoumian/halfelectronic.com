@@ -1,12 +1,12 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
-import ScrollToTop from "components/ScrollToTop"
+import ScrollToTop from 'components/ScrollToTop'
 
 class ScrollToTopContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      scrollY: 0
+      scrollY: 0,
     }
 
     this.setScrollY = this.setScrollY.bind(this)
@@ -17,20 +17,20 @@ class ScrollToTopContainer extends Component {
   }
 
   setScrollY() {
-    if (typeof window === "undefined") return
+    if (typeof window === 'undefined') return
     this.setState({
-      scrollY: window.scrollY
+      scrollY: window.scrollY,
     })
   }
 
   componentDidMount() {
-    if (typeof window === "undefined") return
-    window.addEventListener("scroll", this.setScrollY)
+    if (typeof window === 'undefined') return
+    window.addEventListener('scroll', this.setScrollY)
   }
 
   componentWillUnmount() {
-    if (typeof window === "undefined") return
-    window.removeEventListener("scroll", this.setScrollY)
+    if (typeof window === 'undefined') return
+    window.removeEventListener('scroll', this.setScrollY)
   }
 
   render() {

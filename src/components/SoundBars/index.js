@@ -1,7 +1,7 @@
-import React from "react"
-import { times } from "lodash"
+import React from 'react'
+import { times } from 'lodash'
 
-import styles from "./index.module.css"
+import styles from './index.module.css'
 
 const SoundBars = () => {
   return (

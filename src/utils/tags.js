@@ -4,7 +4,7 @@ export const getMainTag = tags =>
 export const getTagURL = tag => `/tag/${encodeURIComponent(tag)}`
 
 export const normalizeTagForLabel = tag => {
-  if (typeof tag !== "string") {
+  if (typeof tag !== 'string') {
     throw new TypeError(`Tag must be a string; ${typeof tag} given.`)
   }
   return tag.toUpperCase()

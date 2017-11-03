@@ -1,15 +1,15 @@
-import React, { PropTypes } from "react"
-
-import Pagination from "components/Pagination"
-import Posts from "layouts/Posts"
-import PostsQuery from "lib/PostsQuery"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Pagination from 'components/Pagination'
+import Posts from 'layouts/Posts'
+import PostsQuery from 'lib/PostsQuery'
 
 const PostsByDate = (props, { collection, metadata }) => {
   const { page } = props.params
 
-  const pageNumber = typeof page !== "undefined" ? page : null
+  const pageNumber = typeof page !== 'undefined' ? page : null
 
-  const queryFilterFn = item => Boolean(item.layout === "Post")
+  const queryFilterFn = item => Boolean(item.layout === 'Post')
   const query = new PostsQuery(
     collection,
     metadata.numberOfPosts,
@@ -22,7 +22,7 @@ const PostsByDate = (props, { collection, metadata }) => {
     <div>
       <Posts
         head={{
-          title: `Blog`
+          title: `Blog`,
         }}
         posts={posts}
         params={props.params}
@@ -33,13 +33,13 @@ const PostsByDate = (props, { collection, metadata }) => {
 }
 
 PostsByDate.propTypes = {
-  params: PropTypes.object
+  params: PropTypes.object,
 }
 
 PostsByDate.contextTypes = {
   collection: PropTypes.array.isRequired,
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 }
 
 export default PostsByDate

@@ -1,20 +1,22 @@
-import React, { PropTypes } from "react"
-const scrollToElement =
-  typeof window !== "undefined" ? require("scroll-to-element") : null
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import styles from "./index.module.css"
-import Tag from "components/Tag"
+import Tag from 'components/Tag'
+import styles from './index.module.css'
+
+const scrollToElement =
+  typeof window !== 'undefined' ? require('scroll-to-element') : null
 
 const HomepageHeaderButtons = ({ headingTyped }) => {
   const visibility = {
-    visibility: headingTyped ? "visible" : "hidden",
-    opacity: headingTyped ? "1" : "0"
+    visibility: headingTyped ? 'visible' : 'hidden',
+    opacity: headingTyped ? '1' : '0',
   }
 
   const scrollToBlogSection = event => {
     if (!scrollToElement) return event
     event.preventDefault()
-    scrollToElement("#posts-list")
+    scrollToElement('#posts-list')
   }
 
   return (
@@ -31,7 +33,7 @@ const HomepageHeaderButtons = ({ headingTyped }) => {
 }
 
 HomepageHeaderButtons.propTypes = {
-  headingTyped: PropTypes.bool
+  headingTyped: PropTypes.bool,
 }
 
 export default HomepageHeaderButtons

@@ -4,7 +4,6 @@ import get from 'lodash/get'
 
 import styles from './index.module.css'
 import ReactDisqusThread from 'react-disqus-thread'
-import { slugify } from 'utils/urls'
 
 const scrollToElement =
   typeof window !== 'undefined' ? require('scroll-to-element') : null
@@ -22,7 +21,7 @@ class CommentsItems extends Component {
   }
 
   render() {
-    const { open, url, title } = this.props
+    const { open, url, title, slug } = this.props
     return (
       <div
         id="comments-list"
@@ -35,7 +34,7 @@ class CommentsItems extends Component {
               'data.site.siteMetadata.disqus.shortname',
               'undefined'
             )}
-            identifier={slugify(title)}
+            identifier={slug}
             title={title}
             url={url}
           />
@@ -48,6 +47,7 @@ class CommentsItems extends Component {
 CommentsItems.propTypes = {
   open: PropTypes.bool,
   url: PropTypes.string.isRequired,
+  slug: PropTypes.stirng.isRequired,
   title: PropTypes.string.isRequired,
 }
 

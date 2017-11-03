@@ -1,12 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import styles from "./index.module.css"
+import styles from './index.module.css'
 
 const PoweredBy = ({ url, logo, name }) => {
   return (
     <div className={styles.root}>
-      <span className={styles["powered-by"]}>Powered by: </span>
+      <span className={styles['powered-by']}>Powered by: </span>
       <a href={url} target="_blank">
         <img src={logo} alt={name} width="100" />
       </a>
@@ -17,7 +17,7 @@ const PoweredBy = ({ url, logo, name }) => {
 PoweredBy.propTypes = {
   url: PropTypes.string,
   logo: PropTypes.node,
-  name: PropTypes.string
+  name: PropTypes.string,
 }
 
 export default PoweredBy

@@ -1,7 +1,8 @@
-import React, { PropTypes } from "react"
-import cx from "classnames"
+import React from 'react'
+import PropTypes from 'prop-types'
+import cx from 'classnames'
 
-import styles from "./index.module.css"
+import styles from './index.module.css'
 
 const Logo = ({ lightBg, big, animated }) => {
   // expressed in REM units
@@ -11,12 +12,12 @@ const Logo = ({ lightBg, big, animated }) => {
 
   const lettersClassName = {
     [styles.letters]: true,
-    [styles["light-bg"]]: lightBg
+    [styles['light-bg']]: lightBg,
   }
 
   const hiddenLettersClassName = {
-    [styles["animated-letters"]]: animated,
-    [styles["hidden-letters"]]: !animated
+    [styles['animated-letters']]: animated,
+    [styles['hidden-letters']]: !animated,
   }
 
   return (
@@ -38,12 +39,12 @@ const Logo = ({ lightBg, big, animated }) => {
 Logo.propTypes = {
   lightBg: PropTypes.bool,
   big: PropTypes.bool,
-  animated: PropTypes.bool
+  animated: PropTypes.bool,
 }
 
 Logo.defaultProps = {
   lightBg: false,
-  big: false
+  big: false,
 }
 
 export default Logo

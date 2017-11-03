@@ -1,24 +1,24 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
-import LastFMAPI from "api/LastFMAPI"
-import CurrentlyListening from "components/CurrentlyListening"
-import { mapResponseToTracks } from "utils/lastfm"
+import LastFMAPI from 'api/LastFMAPI'
+import CurrentlyListening from 'components/CurrentlyListening'
+import { mapResponseToTracks } from 'utils/lastfm'
 
 class CurrentlyListeningContainer extends Component {
   state = {
     loaded: false,
-    tracks: []
+    tracks: [],
   }
 
   constructor(props) {
     super(props)
-    this.api = new LastFMAPI("MidnightMelodic")
+    this.api = new LastFMAPI('MidnightMelodic')
   }
 
   componentDidMount() {
     this.api
       .getUserRecentTracks()
-      .then(response => mapResponseToTracks.call(null, response.data))
+      .then(response => mapResponseToTracks(response.data))
       .then(tracks => {
         this.setState({ tracks, loaded: true })
       })

@@ -1,13 +1,13 @@
-import React, { cloneElement } from "react"
-import PropTypes from "prop-types"
+import React, { cloneElement } from 'react'
+import PropTypes from 'prop-types'
 
-import styles from "./index.module.css"
+import styles from './index.module.css'
 
 const SidebarWidgetItem = ({ children, lastItem }) => {
   return (
     <div
       className={styles.root}
-      style={{ borderBottom: lastItem ? "none" : "" }}
+      style={{ borderBottom: lastItem ? 'none' : '' }}
     >
       {cloneElement(children)}
     </div>
@@ -16,10 +16,10 @@ const SidebarWidgetItem = ({ children, lastItem }) => {
 
 SidebarWidgetItem.propTypes = {
   children: PropTypes.element.isRequired,
-  lastItem: PropTypes.bool
+  lastItem: PropTypes.bool,
 }
 SidebarWidgetItem.defaultProps = {
-  lastItem: false
+  lastItem: false,
 }
 
 export default SidebarWidgetItem

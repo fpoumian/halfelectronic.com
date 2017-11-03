@@ -45,6 +45,7 @@
     "typography-theme-wordpress-2016": "^0.15.1"
   },
   "devDependencies": {
+    "babel-eslint": "^8.0.1",
     "eslint": "^4.10.0",
     "eslint-config-prettier": "^2.7.0",
     "eslint-config-standard": "^10.2.1",

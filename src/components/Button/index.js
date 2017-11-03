@@ -1,19 +1,19 @@
-import React, { PropTypes } from "react"
-import { Link } from "phenomic"
-import styles from "./index.module.css"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Link } from 'phenomic'
+import styles from './index.module.css'
 
-const Button = ({ children, link }) =>
+const Button = ({ children, link }) => (
   <div>
     <Link to={link}>
-      <span className={styles.button}>
-        {children}
-      </span>
+      <span className={styles.button}>{children}</span>
     </Link>
   </div>
+)
 
 Button.propTypes = {
   children: PropTypes.node,
-  link: PropTypes.string
+  link: PropTypes.string,
 }
 
 export default Button

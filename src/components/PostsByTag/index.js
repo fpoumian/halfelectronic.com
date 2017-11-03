@@ -1,18 +1,18 @@
-import React, { PropTypes } from "react"
-
-import Pagination from "components/Pagination"
-import Posts from "layouts/Posts"
-import PostsQuery from "lib/PostsQuery"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Pagination from 'components/Pagination'
+import Posts from 'layouts/Posts'
+import PostsQuery from 'lib/PostsQuery'
 
 const PostsByTag = (props, { collection }) => {
   const { tag, page } = props.params
 
-  const pageNumber = typeof page !== "undefined" ? page : null
+  const pageNumber = typeof page !== 'undefined' ? page : null
 
   const queryFilterFn = item =>
     Boolean(
-      item.layout === "Post" &&
-        item.hasOwnProperty("tags") &&
+      item.layout === 'Post' &&
+        item.hasOwnProperty('tags') &&
         (item.tags && item.tags.indexOf(tag) > -1)
     )
   const query = new PostsQuery(collection, 2, pageNumber, queryFilterFn)
@@ -22,7 +22,7 @@ const PostsByTag = (props, { collection }) => {
     <div>
       <Posts
         head={{
-          title: `Posts tagged with "${tag}"`
+          title: `Posts tagged with "${tag}"`,
         }}
         posts={posts}
         params={props.params}
@@ -33,13 +33,13 @@ const PostsByTag = (props, { collection }) => {
 }
 
 PostsByTag.propTypes = {
-  params: PropTypes.object
+  params: PropTypes.object,
 }
 
 PostsByTag.contextTypes = {
   collection: PropTypes.array.isRequired,
   metadata: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 }
 
 export default PostsByTag

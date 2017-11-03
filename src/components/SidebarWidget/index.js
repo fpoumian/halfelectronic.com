@@ -1,19 +1,20 @@
-import React, { cloneElement } from "react"
-import PropTypes from "prop-types"
+import React, { cloneElement } from 'react'
+import PropTypes from 'prop-types'
 
-import PoweredBy from "components/PoweredBy"
-import styles from "./index.module.css"
+import PoweredBy from 'components/PoweredBy'
+import styles from './index.module.css'
 
 const SidebarWidget = ({ children, poweredBy }) => {
   return (
     <div className={styles.root}>
       {cloneElement(children)}
-      {poweredBy &&
+      {poweredBy && (
         <PoweredBy
           name={poweredBy.name}
           logo={poweredBy.logo}
           url={poweredBy.url}
-        />}
+        />
+      )}
     </div>
   )
 }
@@ -23,8 +24,8 @@ SidebarWidget.propTypes = {
   poweredBy: PropTypes.shape({
     logo: PropTypes.node,
     url: PropTypes.string,
-    name: PropTypes.string
-  })
+    name: PropTypes.string,
+  }),
 }
 SidebarWidget.defaultProps = {}
 

@@ -1,10 +1,10 @@
-import React, { Component } from "react"
-import { slide as Menu } from "react-burger-menu"
+import React, { Component } from 'react'
+import { slide as Menu } from 'react-burger-menu'
 
-import Logo from "components/Logo/index"
-import styles from "./index.module.css"
-import generateMenuStyles from "./menu-styles"
-import SidebarMenu from "components/SidebarMenu/index"
+import Logo from 'components/Logo/index'
+import styles from './index.module.css'
+import generateMenuStyles from './menu-styles'
+import SidebarMenu from 'components/SidebarMenu/index'
 
 class SidebarContainer extends Component {
   constructor(props) {
@@ -12,14 +12,14 @@ class SidebarContainer extends Component {
     this.state = {
       isOpen: false,
       loading: true,
-      currentlyReadingBooks: []
+      currentlyReadingBooks: [],
     }
     this.handleMenuStateChange = this.handleMenuStateChange.bind(this)
   }
 
   handleMenuStateChange({ isOpen }) {
     this.setState({
-      isOpen
+      isOpen,
     })
   }
 
@@ -33,11 +33,11 @@ class SidebarContainer extends Component {
           styles={generateMenuStyles('#222326')}
           onStateChange={this.handleMenuStateChange}
         >
-          <div className={styles["logo-wrapper"]}>
+          <div className={styles['logo-wrapper']}>
             <Logo lightBg={true} big={true} />
           </div>
           <SidebarMenu />
-          {/*<SidebarSocialWidget />*/}
+          {/* <SidebarSocialWidget /> */}
         </Menu>
       </aside>
     )

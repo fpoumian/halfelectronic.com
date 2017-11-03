@@ -1,22 +1,22 @@
-import { mapResponseToTracks } from "../lastfm"
-import { recentTracksResponse } from "../__mocks__/lastfm.mocks"
+import { mapResponseToTracks } from '../lastfm'
+import { recentTracksResponse } from '../__mocks__/lastfm.mocks'
 
-describe("mapResponseToTracks", function() {
+describe('mapResponseToTracks', function() {
   const tracks = [
     {
-      name: "Purrfect",
-      artist: "Funki Porcini",
+      name: 'Purrfect',
+      artist: 'Funki Porcini',
       nowPlaying: true,
-      timestamp: ""
+      timestamp: '',
     },
     {
-      name: "Stormy Cloud",
-      artist: "DJ Krush",
+      name: 'Stormy Cloud',
+      artist: 'DJ Krush',
       nowPlaying: false,
-      timestamp: 1501807419
-    }
+      timestamp: 1501807419,
+    },
   ]
-  it("can map response to tracks", function() {
+  it('can map response to tracks', function() {
     expect(mapResponseToTracks(recentTracksResponse)).toEqual(tracks)
   })
 })

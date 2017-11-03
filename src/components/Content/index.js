@@ -1,14 +1,11 @@
-import React, { PropTypes } from "react"
+import React from 'react'
+import PropTypes from 'prop-types'
+import styles from './index.module.css'
 
-import styles from "./index.module.css"
-
-const Content = props =>
-  <div className={styles.content}>
-    {props.children}
-  </div>
+const Content = props => <div className={styles.content}>{props.children}</div>
 
 Content.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
 export default Content
