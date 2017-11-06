@@ -30,6 +30,7 @@
     "gatsby-source-filesystem": "^1.5.5",
     "gatsby-transformer-remark": "^1.7.17",
     "gatsby-transformer-sharp": "^1.6.10",
+    "intersection-observer": "^0.4.2",
     "lodash": "^4.15.0",
     "lozad": "^1.0.9",
     "prism-theme-one-dark": "^1.0.0",

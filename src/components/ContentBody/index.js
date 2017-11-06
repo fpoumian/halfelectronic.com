@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import lozard from 'lozad'
+import 'intersection-observer'
 
 import componentStyles from './index.module.css'
 
