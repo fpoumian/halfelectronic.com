@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import lozard from 'lozad'
+
 import componentStyles from './index.module.css'
 
-const ContentBody = ({ body, style }) => (
-  <section
-    style={style ? { ...style } : {}}
-    className={componentStyles.wrapper}
-    dangerouslySetInnerHTML={{ __html: body }}
-  />
-)
+class ContentBody extends Component {
+  componentDidMount() {
+    lozard().observe()
+  }
+
+  render() {
+    return (
+      <section
+        style={this.props.style ? { ...this.props.style } : {}}
+        className={componentStyles.wrapper}
+        dangerouslySetInnerHTML={{ __html: this.props.body }}
+      />
+    )
+  }
+}
 
 ContentBody.propTypes = {
   body: PropTypes.string,

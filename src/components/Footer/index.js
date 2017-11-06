@@ -1,10 +1,10 @@
 import React from 'react'
 
 import styles from './index.module.css'
+import NetlifyLogo from './netlify.svg'
 
 const Footer = () => (
   <footer className={styles.footer}>
-    {/* If you like Phenomic, this is a way to share the love ;) */}
     <div className={styles.info}>
       <span className={styles.copyright}>
         Copyright &copy; Fernando Poumián • 2017 All rights reserved.
@@ -37,6 +37,18 @@ const Footer = () => (
           src="https://images.contentful.com/fo9twyrwpveg/7F5pMEOhJ6Y2WukCa2cYws/398e290725ef2d3b3f0f5a73ae8401d6/PoweredByContentful_DarkBackground.svg"
           style={{ maxWidth: '100px', width: '100%' }}
           alt="Powered by Contentful"
+        />
+      </a>
+      <a
+        href="https://www.netlify.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ marginLeft: '1rem' }}
+      >
+        <img
+          src={NetlifyLogo}
+          style={{ maxWidth: '100px', width: '100%' }}
+          alt="Hosted on Netlify"
         />
       </a>
     </div>
