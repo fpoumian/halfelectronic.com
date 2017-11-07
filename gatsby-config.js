@@ -60,7 +60,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Montserrat:500`,
+          `Montserrat:500,700,800`,
           `Noto Serif:400,700`,
           `Varela Round`,
           `Oxygen`,
