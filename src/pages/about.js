@@ -11,7 +11,9 @@ class About extends React.Component {
   render() {
     return (
       <div>
-        <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
+        <Helmet
+          title={`About | ${get(this, 'props.data.site.siteMetadata.title')}`}
+        />
         <Cover>
           <GenericHeader title={`About`} />
         </Cover>
@@ -59,5 +61,15 @@ class About extends React.Component {
 About.propTypes = {
   data: PropTypes.object,
 }
+
+export const pageQuery = graphql`
+  query AboutQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
 
 export default About

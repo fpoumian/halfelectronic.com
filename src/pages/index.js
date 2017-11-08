@@ -14,7 +14,9 @@ class BlogIndex extends React.Component {
 
     return (
       <div>
-        <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
+        <Helmet
+          title={`Home | ${get(this, 'props.data.site.siteMetadata.title')}`}
+        />
         <Cover bgImage="/assets/header-bg.jpg">
           <HomePageHeaderContainer {...this.props} />
         </Cover>

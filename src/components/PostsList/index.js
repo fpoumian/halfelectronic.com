@@ -12,29 +12,31 @@ const PostsList = ({ posts, params }) => {
   }
 
   return (
-    <section id="posts-list">
-      {posts.length > 0 ? (
-        <ul className={styles.list}>
-          {posts.map(post => (
-            <li key={post.title.id}>
-              <PagePreview
-                {...post}
-                title={post.title.title}
-                excerpt={
-                  post.childContentfulPostBodyTextNode.childMarkdownRemark
-                    .excerpt
-                }
-                params={params}
-                tags={[...post.tag]}
-                category={post.category}
-              />
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <NoPosts />
-      )}
-    </section>
+    <div>
+      <section id="posts-list">
+        {posts.length > 0 ? (
+          <ul className={styles.list}>
+            {posts.map(post => (
+              <li key={post.title.id}>
+                <PagePreview
+                  {...post}
+                  title={post.title.title}
+                  excerpt={
+                    post.childContentfulPostBodyTextNode.childMarkdownRemark
+                      .excerpt
+                  }
+                  params={params}
+                  tags={[...post.tag]}
+                  category={post.category}
+                />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <NoPosts />
+        )}
+      </section>
+    </div>
   )
 }
 

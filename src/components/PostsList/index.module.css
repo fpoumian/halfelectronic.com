@@ -7,10 +7,7 @@
   padding: 0;
 
   & li {
-    padding: 10% 0;
-    @media (min-width: 768px) {
-      padding: 9vh 0;
-    }
+    padding: 9vh 0;
   }
 
   & li:nth-child(even) {

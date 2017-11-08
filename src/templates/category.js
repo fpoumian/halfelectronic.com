@@ -12,7 +12,12 @@ class CategoryArchive extends React.Component {
     const { title, post } = this.props.data.contentfulCategory
     return (
       <div>
-        <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
+        <Helmet
+          title={`${title} | ${get(
+            this,
+            'props.data.site.siteMetadata.title'
+          )}`}
+        />
         <Cover>
           <ArchiveHeader title={title} />
         </Cover>

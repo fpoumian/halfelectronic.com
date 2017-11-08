@@ -12,7 +12,12 @@ class TagArchive extends React.Component {
     const { title, post } = this.props.data.contentfulTag
     return (
       <div>
-        <Helmet title={get(this, 'props.data.site.siteMetadata.title')} />
+        <Helmet
+          title={`${title} | ${get(
+            this,
+            'props.data.site.siteMetadata.title'
+          )}`}
+        />
         <Cover>
           <ArchiveHeader title={title} />
         </Cover>
