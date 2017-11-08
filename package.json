@@ -39,14 +39,10 @@
     "react-burger-menu": "^2.1.10",
     "react-disqus-comments": "^1.1.1",
     "react-icons": "^2.2.7",
-    "react-responsive-grid": "^0.3.3",
     "react-share": "^1.16.0",
     "react-typist": "^2.0.4",
     "scroll-to-element": "^2.0.0",
     "tween": "^0.9.0",
-    "typeface-merriweather": "^0.0.35",
-    "typeface-montserrat": "^0.0.37",
-    "typography-theme-wordpress-2016": "^0.15.1",
     "url-join": "^2.0.2"
   },
   "devDependencies": {
@@ -60,7 +56,6 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.4.0",
     "eslint-plugin-standard": "^3.0.1",
-    "gh-pages": "^0.12.0",
     "prettier": "^1.7.4"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
@@ -80,7 +75,6 @@
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   }
 }
