@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import styles from './index.module.css'
 import ReactDisqusComments from 'react-disqus-comments'
 
-const scrollToElement =
-  typeof window !== 'undefined' ? require('scroll-to-element') : null
+let scrollToElement
 
 class CommentsItems extends Component {
   constructor(props) {
@@ -13,6 +12,8 @@ class CommentsItems extends Component {
   }
 
   componentDidMount() {
+    scrollToElement =
+      typeof window !== 'undefined' ? require('scroll-to-element') : null
     if (scrollToElement) {
       scrollToElement('#comments-list')
     }
