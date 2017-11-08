@@ -1,20 +1,22 @@
+@import '../../styles/variables.module.css';
+
 .wrapper {
   display: inline-flex;
   transition: visibility 1s ease-in, opacity 1s linear;
   margin-top: 2rem;
   align-items: center;
   flex-direction: column;
-  @media (--tablet) {
+  @media (min-width: 768px) {
     width: 225px;
     justify-content: space-between;
     flex-direction: row;
   }
-  @media (--tablet) {
+  @media (min-width: 768px) {
   }
   & > div {
     width: 100%;
     margin-bottom: 1rem;
-    @media (--tablet) {
+    @media (min-width: 768px) {
       width: auto;
     }
   }

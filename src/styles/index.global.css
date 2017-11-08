@@ -1,4 +1,5 @@
 /* Using global sytles is not recommended, prefer local styles via CSS Modules */
+@import './variables.module.css';
 
 /*
  * box model like it should be
@@ -113,7 +114,7 @@
     font-size: var(--contentFontSize);
     line-height: var(--contentLineHeight);
     color: var(--darkGray);
-    @media (--mobile-m) {
+    @media (min-width: 480px) {
       font-size: calc(var(--contentFontSize) + 0.1);
     }
   }

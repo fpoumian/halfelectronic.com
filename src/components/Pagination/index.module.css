@@ -1,9 +1,11 @@
+@import '../../styles/variables.module.css';
+
 .wrapper {
   display: flex;
   flex-direction: column;
   margin: 8vh auto;
   align-items: center;
-  @media (--mobile-m) {
+  @media (min-width: 480px) {
     flex-direction: row;
     justify-content: space-between;
   }

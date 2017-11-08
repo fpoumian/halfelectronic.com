@@ -1,3 +1,5 @@
+@import '../../styles/variables.module.css';
+
 .item {
   composes: sidebar-submenu-item from "styles/sidebar.module.css";
 }

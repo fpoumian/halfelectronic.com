@@ -1,9 +1,11 @@
+@import '../../styles/variables.module.css';
+
 .wrapper {
   width: 80%;
   max-width: var(--maxWidth);
   margin: 0 auto;
   padding: 3rem 0;
-  @media (--tablet) {
+  @media (min-width: 768px) {
     width: 100%;
     padding: 0;
     margin: 0;
@@ -13,7 +15,7 @@
     font-size: var(--excerptBaseFontSize);
     margin-bottom: 0;
     line-height: 1.6rem;
-    @media (--laptop) {
+    @media (min-width: 992px) {
       font-size: calc(var(--excerptBaseFontSize) + 0.4rem);
     }
   }
@@ -24,10 +26,10 @@
     font-weight: 600;
     margin: 0;
     margin-top: 2rem;
-    @media (--tablet) {
+    @media (min-width: 768px) {
       font-size: calc(var(--titleBaseFontSize) + 0.3rem);
     };
-    @media (--laptop) {
+    @media (min-width: 992px) {
       font-size: calc(var(--titleBaseFontSize) + 0.8rem);
     }
   }

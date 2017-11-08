@@ -1,3 +1,5 @@
+@import '../../styles/variables.module.css';
+
 .button {
   text-transform: uppercase;
   border: 3px solid var(--lightGray);

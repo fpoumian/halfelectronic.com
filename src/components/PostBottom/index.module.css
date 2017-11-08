@@ -1,3 +1,5 @@
+@import '../../styles/variables.module.css';
+
 .wrapper {
   &:before {
     background: color(var(--neutralGray) tint(58%));
@@ -19,7 +21,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  @media (--tablet) {
+  @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -30,7 +32,7 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  @media (--tablet) {
+  @media (min-width: 768px) {
     width: 53%;
     flex-direction: row;
     justify-content: flex-start;
@@ -39,8 +41,8 @@
   }
   & div {
     margin-bottom: 1rem;
-    @media (--mobile-m) {
-    } @media (--tablet) {
+    @media (min-width: 480px) {
+    } @media (min-width: 768px) {
     width: auto;
     margin-right: 1rem;
   }
@@ -49,7 +51,7 @@
 
 .main-tag {
   text-align: center;
-  @media (--tablet) {
+  @media (min-width: 768px) {
     width: auto;
   }
   & div {
@@ -65,7 +67,7 @@
     font-family: var(--altFontFamily);
     color: var(--darkGray);
   }
-  @media (--tablet) {
+  @media (min-width: 768px) {
     display: block;
   }
 }
@@ -76,7 +78,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 2.5rem;
-  @media (--tablet) {
+  @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
   }

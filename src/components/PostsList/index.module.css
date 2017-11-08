@@ -1,3 +1,5 @@
+
+@import '../../styles/variables.module.css';
 .list {
   display: flex;
   flex-direction: column;
@@ -6,7 +8,7 @@
 
   & li {
     padding: 10% 0;
-    @media (--tablet) {
+    @media (min-width: 768px) {
       padding: 9vh 0;
     }
   }

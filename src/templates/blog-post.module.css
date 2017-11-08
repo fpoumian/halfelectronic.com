@@ -1,6 +1,4 @@
-/* :root {
-    --mainColor: red;
-  } */
+@import '../styles/variables.module.css';
   
   .item {
     margin-bottom: 50px;  
@@ -8,5 +6,4 @@
 
 .heading {
     font-size: 51px;
-    color: var(--mainColor);
 }
