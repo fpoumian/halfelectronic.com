@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import get from 'lodash/get'
-
 import styles from './index.module.css'
-import ReactDisqusThread from 'react-disqus-thread'
+import ReactDisqusComments from 'react-disqus-comments'
 
 const scrollToElement =
   typeof window !== 'undefined' ? require('scroll-to-element') : null
 
 class CommentsItems extends Component {
-  constructor(props, { metadata }) {
+  constructor(props) {
     super(props)
     this.props = props
   }
@@ -28,12 +26,8 @@ class CommentsItems extends Component {
         className={styles.wrapper + ' ' + styles[open ? 'open' : 'closed']}
       >
         {open && (
-          <ReactDisqusThread
-            shortname={get(
-              this.props,
-              'data.site.siteMetadata.disqus.shortname',
-              'undefined'
-            )}
+          <ReactDisqusComments
+            shortname={`halfelectronic-com`}
             identifier={slug}
             title={title}
             url={url}
@@ -51,20 +45,4 @@ CommentsItems.propTypes = {
   title: PropTypes.string.isRequired,
 }
 
-CommentsItems.contextTypes = {
-  metadata: PropTypes.object.isRequired,
-}
-
 export default CommentsItems
-
-// export const pageQuery = graphql`
-//   query DisqusMetadata {
-//     site {
-//       siteMetadata {
-//         disqus {
-//           shortname
-//         }
-//       }
-//     }
-//   }
-// `

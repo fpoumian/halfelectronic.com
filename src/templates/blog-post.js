@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import path from 'path'
+import urlJoin from 'url-join'
 
 import ContentBody from 'components/ContentBody'
 import PostHeader from 'components/PostHeader'
@@ -18,7 +18,7 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.contentfulPost
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const siteUrl = get(this.props, 'data.site.siteMetadata.siteUrl')
-    const postPermalink = path.join(siteUrl, 'post', post.slug)
+    const postPermalink = urlJoin(siteUrl, 'post', post.slug)
     const head = {
       featured: false,
       title: 'This is the title',
@@ -64,7 +64,11 @@ class BlogPostTemplate extends React.Component {
           category={post.category}
         />
 
-        <CommentsContainer url={'/path'} title={post.title.title} />
+        <CommentsContainer
+          url={postPermalink}
+          title={post.title.title}
+          slug={post.slug}
+        />
       </div>
     )
   }
