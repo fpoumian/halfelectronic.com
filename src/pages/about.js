@@ -44,7 +44,7 @@ class About extends React.Component {
               </p>
               
               <p>
-                Nowadays, however, most of my stack is based around the ever growing Node.js/Javascript ecosystem. 
+                Nowadays, however, most of my stack is based around the ever growing Node.js and Javascript ecosystem. 
                 I'm a huge React enthusiast, and you will likely find me rambling about React at one point or another. 
                 This, in turn, has also sparked my interest in alternative programming and architectural paradigms 
                 such as Functional Programming, Isomorphic/Universal Javascript and Serverless Architectures.
