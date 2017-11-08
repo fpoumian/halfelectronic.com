@@ -1,4 +1,5 @@
-import { has, get } from 'lodash'
+import has from 'lodash/has'
+import get from 'lodash/get'
 
 export const mapResponseToTracks = response => {
   return response.recenttracks.track.map(track => {

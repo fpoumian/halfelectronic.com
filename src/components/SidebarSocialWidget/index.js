@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { FaGithub, FaTwitterSquare } from 'react-icons/lib/fa'
+import FaGithub from 'react-icons/lib/fa/github.js'
+import FaTwitterSquare from 'react-icons/lib/fa/twitter-square.js'
 import styles from './index.module.css'
 
 const SidebarSocialWidget = () => {

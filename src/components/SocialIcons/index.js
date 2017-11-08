@@ -1,46 +1,49 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styles from './index.module.css'
-
 const reactShare = typeof window !== 'undefined' ? require('react-share') : null
 
-const SocialIcons = ({ url }) => {
-  if (!reactShare) return null
+class SocialIcons extends Component {
+  render() {
+    if (!reactShare) return null
 
-  const { ShareButtons, generateShareIcon } = reactShare
+    const { ShareButtons, generateShareIcon } = reactShare
 
-  const {
-    FacebookShareButton,
-    TwitterShareButton,
-    GooglePlusShareButton,
-    LinkedinShareButton,
-  } = ShareButtons
-  const FacebookIcon = generateShareIcon('facebook')
-  const TwitterIcon = generateShareIcon('twitter')
-  const GooglePlusIcon = generateShareIcon('google')
-  const LinkedinIcon = generateShareIcon('linkedin')
+    const {
+      FacebookShareButton,
+      TwitterShareButton,
+      GooglePlusShareButton,
+      LinkedinShareButton,
+    } = ShareButtons
+    const FacebookIcon = generateShareIcon('facebook')
+    const TwitterIcon = generateShareIcon('twitter')
+    const GooglePlusIcon = generateShareIcon('google')
+    const LinkedinIcon = generateShareIcon('linkedin')
 
-  const iconProps = {
-    size: 35,
-    round: true,
+    const iconProps = {
+      size: 35,
+      round: true,
+    }
+
+    const { url } = this.props
+
+    return (
+      <div className={styles.wrapper}>
+        <FacebookShareButton url={url} className={styles.icon}>
+          <FacebookIcon {...iconProps} />
+        </FacebookShareButton>
+        <TwitterShareButton url={url} className={styles.icon}>
+          <TwitterIcon {...iconProps} />
+        </TwitterShareButton>
+        <GooglePlusShareButton url={url} className={styles.icon}>
+          <GooglePlusIcon {...iconProps} />
+        </GooglePlusShareButton>
+        <LinkedinShareButton url={url} className={styles.icon}>
+          <LinkedinIcon {...iconProps} />
+        </LinkedinShareButton>
+      </div>
+    )
   }
-
-  return (
-    <div className={styles.wrapper}>
-      <FacebookShareButton url={url} className={styles.icon}>
-        <FacebookIcon {...iconProps} />
-      </FacebookShareButton>
-      <TwitterShareButton url={url} className={styles.icon}>
-        <TwitterIcon {...iconProps} />
-      </TwitterShareButton>
-      <GooglePlusShareButton url={url} className={styles.icon}>
-        <GooglePlusIcon {...iconProps} />
-      </GooglePlusShareButton>
-      <LinkedinShareButton url={url} className={styles.icon}>
-        <LinkedinIcon {...iconProps} />
-      </LinkedinShareButton>
-    </div>
-  )
 }
 
 SocialIcons.propTypes = {

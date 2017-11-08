@@ -1,5 +1,5 @@
 import React from 'react'
-import { times } from 'lodash'
+import times from 'lodash/times'
 
 import styles from './index.module.css'
 
