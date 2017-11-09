@@ -58,7 +58,7 @@ export const pageQuery = graphql`
             id
             title
           }
-          date
+          date: updatedAt
           slug
         }
       }

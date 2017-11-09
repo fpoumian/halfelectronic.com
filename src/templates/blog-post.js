@@ -55,7 +55,9 @@ class BlogPostTemplate extends React.Component {
             body={post.childContentfulPostBodyTextNode.childMarkdownRemark.html}
             isLoading={false}
           />
-          <div className={styles.date}>{`Published on: ${post.date}`}</div>
+          <div className={styles.date}>{`Published on: ${new Date(
+            post.date
+          ).toDateString()}`}</div>
         </Container>
 
         <PostBottom
@@ -103,7 +105,7 @@ export const pageQuery = graphql`
         title
         slug
       }
-      date
+      date: updatedAt
       slug
       childContentfulPostBodyTextNode {
         childMarkdownRemark {

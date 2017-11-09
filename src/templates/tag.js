@@ -56,6 +56,7 @@ export const pageQuery = graphql`
           title
           id
         }
+        date: updatedAt
         slug
         childContentfulPostBodyTextNode {
           childMarkdownRemark {
