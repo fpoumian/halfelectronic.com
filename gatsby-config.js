@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-// console.log(process.env)
+const DEVELOP = process.env['gatsby_executing_command'] === 'develop'
 
 module.exports = {
   siteMetadata: {
@@ -20,14 +20,10 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID || '',
-        accessToken:
-          process.env['gatsby_executing_command'] === 'develop'
-            ? process.env.CONTENTFUL_PREVIEW_API_ACCESS_TOKEN
-            : process.env.CONTENTFUL_DELIVERY_API_ACCESS_TOKEN,
-        host:
-          process.env['gatsby_executing_command'] === 'develop'
-            ? 'preview.contentful.com'
-            : null,
+        accessToken: DEVELOP
+          ? process.env.CONTENTFUL_PREVIEW_API_ACCESS_TOKEN
+          : process.env.CONTENTFUL_DELIVERY_API_ACCESS_TOKEN,
+        host: DEVELOP ? 'preview.contentful.com' : null,
       },
     },
     {
