@@ -6,3 +6,4 @@ public
 .cache/
 .env
 yarn.lock
+.idea/

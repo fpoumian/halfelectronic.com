@@ -6,10 +6,11 @@ import Helmet from 'react-helmet'
 import PostsList from 'components/PostsList'
 import ArchiveHeader from 'components/ArchiveHeader'
 import Cover from 'components/Cover'
+import { sortPostsByDate } from 'utils/posts'
 
 class CategoryArchive extends React.Component {
   render() {
-    const { title, post } = this.props.data.contentfulCategory
+    const { title, posts } = this.props.data.contentfulCategory
     return (
       <div>
         <Helmet
@@ -21,7 +22,7 @@ class CategoryArchive extends React.Component {
         <Cover>
           <ArchiveHeader title={title} />
         </Cover>
-        <PostsList posts={post} params={{}} />
+        <PostsList posts={posts} params={{}} />
       </div>
     )
   }
@@ -43,7 +44,7 @@ export const pageQuery = graphql`
     contentfulCategory(id: { eq: $id }) {
       title
       slug
-      post {
+      posts: post {
         category {
           title
           slug

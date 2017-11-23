@@ -1,11 +1,6 @@
 /* Using global sytles is not recommended, prefer local styles via CSS Modules */
 @import './variables.module.css';
 
-/*
- * box model like it should be
- *
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- */
  html {
     box-sizing: border-box;
   }
@@ -53,13 +48,7 @@
     line-height: 1.5rem;
     font-family: var(--mainFontFamily)
   }
-  
-  /*
-   * .phenomic-HeadingAnchor
-   *
-   * anchors for markdown headings, generated via markdown renderer, so require
-   * global styling
-   */
+
   @custom-selector :--headings h1, h2, h3, h4, h5, h6;
   
   @custom-selector :--bodyContentElements h1,h2,h3,h4,h5,h6, ol, p, ul, pre;
@@ -68,10 +57,14 @@
     position: relative;
     font-family: var(--altFontFamily);
   }
-  
-  :root {
-    --phenomic-HeadingAnchor-width: 1.4rem;
-    --phenomic-HeadingAnchor-margin: 0.4rem;
+
+.content-body :--headings {
+    margin-top: 3rem;
+    margin-bottom: -1rem;
+}
+
+
+:root {
     --blockquoteDivider: {
       display: block;
       width: 60%;
@@ -81,22 +74,7 @@
       margin: 60px auto 40px;
     }
   }
-  
-  .phenomic-HeadingAnchor {
-    display: inline-block;
-    text-align: center;
-    margin-left: calc(-1 * (var(--phenomic-HeadingAnchor-width) + var(--phenomic-HeadingAnchor-margin)));
-    margin-right: var(--phenomic-HeadingAnchor-margin);
-    width: var(--phenomic-HeadingAnchor-width);
-    line-height: var(--phenomic-HeadingAnchor-width);
-    text-decoration: none;
-    opacity: 0.1;
-    transition: opacity 0.2s;
-  
-    @nest :--headings:hover & {
-      opacity: 1;
-    }
-  }
+
   
   /* minimal styling, prefer removing this and use local styles */
   a {
@@ -118,8 +96,8 @@
       font-size: calc(var(--contentFontSize) + 0.1);
     }
   }
-  
-  hr {
+
+hr {
     border: 0;
     height: 1px;
     background: var(--colorNeutral);

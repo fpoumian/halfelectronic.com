@@ -1,13 +1,12 @@
 require('dotenv').config()
 
+// console.log(process.env)
+
 module.exports = {
   siteMetadata: {
     title: 'halfelectronic.com',
     author: 'Fernando Poumian',
     siteUrl: 'https://www.halfelectronic.com',
-    disqus: {
-      shortname: 'fernando-codes',
-    },
   },
   plugins: [
     {
@@ -21,7 +20,14 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID || '',
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || '',
+        accessToken:
+          process.env['gatsby_executing_command'] === 'develop'
+            ? process.env.CONTENTFUL_PREVIEW_API_ACCESS_TOKEN
+            : process.env.CONTENTFUL_DELIVERY_API_ACCESS_TOKEN,
+        host:
+          process.env['gatsby_executing_command'] === 'develop'
+            ? 'preview.contentful.com'
+            : null,
       },
     },
     {
@@ -35,19 +41,19 @@ module.exports = {
             },
           },
           'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
+          // 'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
         ],
       },
     },
     // `gatsby-transformer-sharp`,
     // `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     // trackingId: `ADD YOUR TRACKING ID HERE`,
+    //   },
+    // },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     // {
