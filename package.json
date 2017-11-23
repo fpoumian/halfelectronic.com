@@ -20,6 +20,7 @@
     "gatsby-plugin-offline": "^1.0.10",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-remark-copy-linked-files": "^1.5.9",
+    "gatsby-remark-external-links": "^0.0.3",
     "gatsby-remark-images": "^1.5.18",
     "gatsby-remark-prismjs": "^1.2.1",
     "gatsby-remark-responsive-iframe": "^1.4.8",
