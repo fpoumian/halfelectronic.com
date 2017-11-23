@@ -15,6 +15,7 @@
 
 .wrapper {
   margin: 4vh auto;
+  word-wrap: break-word;
 
   /* & :--headingElements {
     margin-bottom: -1rem;
