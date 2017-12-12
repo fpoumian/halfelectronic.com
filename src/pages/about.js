@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import ContentBody from 'components/ContentBody/'
-import Container from 'components/Container/'
+import ContentWrapper from 'components/ContentWrapper/'
 import GenericHeader from 'components/GenericHeader'
 import Cover from 'components/Cover'
 
@@ -18,7 +18,7 @@ class About extends React.Component {
           <GenericHeader title={`About`} />
         </Cover>
 
-        <Container
+        <ContentWrapper
           style={{
             marginTop: '8vh',
             marginBottom: '8vh',
@@ -52,7 +52,7 @@ class About extends React.Component {
               
             `}
           />
-        </Container>
+        </ContentWrapper>
       </div>
     )
   }

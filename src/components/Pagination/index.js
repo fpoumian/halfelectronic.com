@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { joinUri } from 'phenomic'
 import Button from 'components/Button'
-import Container from 'components/Container'
+import ContentWrapper from 'components/ContentWrapper'
 
 import styles from './index.module.css'
 
@@ -14,7 +14,7 @@ const Pagination = ({ query, baseURL }) => {
   }
 
   return (
-    <Container>
+    <ContentWrapper>
       <div
         className={styles.wrapper}
         style={!prev && prev !== 0 ? noPrevStyles : {}}
@@ -34,7 +34,7 @@ const Pagination = ({ query, baseURL }) => {
           </Button>
         )}
       </div>
-    </Container>
+    </ContentWrapper>
   )
 }
 

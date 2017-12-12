@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Tag from 'components/Tag'
-import Container from 'components/Container'
+import ContentWrapper from 'components/ContentWrapper'
 import SocialIcons from 'components/SocialIcons'
 import styles from './index.module.css'
 
 const PostBottom = ({ tags, url, category }) => {
   return (
-    <Container style={{ marginTop: '4vh', marginBottom: '8vh' }}>
+    <ContentWrapper style={{ marginTop: '4vh', marginBottom: '8vh' }}>
       <div className={styles.tags}>
         {tags && (
           <div className={styles['secondary-tags']}>
@@ -41,7 +41,7 @@ const PostBottom = ({ tags, url, category }) => {
           <SocialIcons url={url} />
         </div>
       </div>
-    </Container>
+    </ContentWrapper>
   )
 }
 

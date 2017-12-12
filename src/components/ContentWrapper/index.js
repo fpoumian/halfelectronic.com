@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './index.module.css'
 
-const Container = ({ children, style }) => {
+const ContentWrapper = ({ children, style }) => {
   return (
     <div className={styles.wrapper} style={style || {}}>
       {children}
@@ -10,10 +10,10 @@ const Container = ({ children, style }) => {
   )
 }
 
-Container.propTypes = {
+ContentWrapper.propTypes = {
   children: PropTypes.node,
   style: PropTypes.object,
 }
-Container.defaultProps = {}
+ContentWrapper.defaultProps = {}
 
-export default Container
+export default ContentWrapper

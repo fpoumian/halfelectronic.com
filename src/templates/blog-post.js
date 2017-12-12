@@ -7,7 +7,7 @@ import urlJoin from 'url-join'
 import ContentBody from 'components/ContentBody'
 import PostHeader from 'components/PostHeader'
 import PostBottom from 'components/PostBottom'
-import Container from 'components/Container'
+import ContentWrapper from 'components/ContentWrapper'
 import CommentsContainer from 'containers/CommentsContainer'
 import Cover from 'components/Cover'
 
@@ -40,7 +40,7 @@ class BlogPostTemplate extends React.Component {
             category={post.category}
           />
         </Cover>
-        <Container style={{ marginTop: '8vh', marginBottom: '4vh' }}>
+        <ContentWrapper style={{ marginTop: '8vh', marginBottom: '4vh' }}>
           {head.featured && (
             <div className={styles['featured-img']}>
               <img
@@ -58,7 +58,7 @@ class BlogPostTemplate extends React.Component {
           <div className={styles.date}>{`Published on: ${new Date(
             post.date
           ).toDateString()}`}</div>
-        </Container>
+        </ContentWrapper>
 
         <PostBottom
           tags={[...post.tag]}

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import ContentBody from 'components/ContentBody/'
-import Container from 'components/Container/'
+import ContentWrapper from 'components/ContentWrapper/'
 import GenericHeader from 'components/GenericHeader'
 import Cover from 'components/Cover'
 import Button from 'components/Button'
@@ -17,7 +17,7 @@ class About extends React.Component {
           <GenericHeader title={`😱 Oooops!`} />
         </Cover>
 
-        <Container
+        <ContentWrapper
           style={{
             marginTop: '8vh',
             marginBottom: '8vh',
@@ -39,7 +39,7 @@ class About extends React.Component {
           >
             <Button link="/">{`Go back to Home ➔`}</Button>
           </div>
-        </Container>
+        </ContentWrapper>
       </div>
     )
   }

@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 import { AllHtmlEntities } from 'html-entities'
 
 import Tag from 'components/Tag'
-import Container from 'components/Container'
+import ContentWrapper from 'components/ContentWrapper'
 import styles from './index.module.css'
 
 const entities = new AllHtmlEntities()
@@ -14,14 +14,12 @@ const PagePreview = ({
   title,
   date,
   excerpt,
-  tags,
   category,
-  params,
 }) => {
   const pageDate = date ? new Date(date) : null
 
   return (
-    <Container>
+    <ContentWrapper>
       <article className={styles.wrapper}>
         <div className={styles.meta}>
           {
@@ -50,7 +48,7 @@ const PagePreview = ({
           <p>{excerpt}</p>
         </div>
       </article>
-    </Container>
+    </ContentWrapper>
   )
 }
 

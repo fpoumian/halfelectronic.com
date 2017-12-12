@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { slide as Menu } from 'react-burger-menu'
 
 import Logo from 'components/Logo/index'
-import styles from './index.module.css'
 import generateMenuStyles from './menu-styles'
 import SidebarMenu from 'components/SidebarMenu/index'
 import SidebarSocialWidget from 'components/SidebarSocialWidget'
@@ -34,7 +33,7 @@ class SidebarContainer extends Component {
           styles={generateMenuStyles('#222326')}
           onStateChange={this.handleMenuStateChange}
         >
-          <div className={styles['logo-wrapper']}>
+          <div style={{ marginBottom: '2rem' }}>
             <Logo lightBg={true} big={true} />
           </div>
           <SidebarMenu />

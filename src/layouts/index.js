@@ -5,18 +5,18 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 import SidebarContainer from 'containers/SidebarContainer'
 import ScrollToTopContainer from 'containers/ScrollToTopContainer'
-import RootContainer from 'components/RootContainer'
 import Content from 'components/Content'
 
 import 'styles/index.global.css'
 import 'prism-theme-one-dark/prism-onedark.css'
+import styles from './index.module.css'
 
 class Template extends React.Component {
   render() {
     const { children } = this.props
 
     return (
-      <RootContainer>
+      <div className={styles.wrapper}>
         <Content>
           <SidebarContainer />
           <Header />
@@ -24,7 +24,7 @@ class Template extends React.Component {
           <Footer />
           <ScrollToTopContainer />
         </Content>
-      </RootContainer>
+      </div>
     )
   }
 }
