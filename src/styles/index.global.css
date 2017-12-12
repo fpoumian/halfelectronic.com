@@ -1,5 +1,6 @@
 /* Using global sytles is not recommended, prefer local styles via CSS Modules */
 @import './variables.module.css';
+@import './media-queries.module.css';
 
  html {
     box-sizing: border-box;
@@ -51,32 +52,11 @@
 
   @custom-selector :--headings h1, h2, h3, h4, h5, h6;
   
-  @custom-selector :--bodyContentElements h1,h2,h3,h4,h5,h6, ol, p, ul, pre;
-  
   :--headings {
     position: relative;
     font-family: var(--altFontFamily);
   }
 
-.content-body :--headings {
-    margin-top: 3rem;
-    margin-bottom: -1rem;
-}
-
-
-:root {
-    --blockquoteDivider: {
-      display: block;
-      width: 60%;
-      height: 1px;
-      content: '';
-      background: #ededed;
-      margin: 60px auto 40px;
-    }
-  }
-
-  
-  /* minimal styling, prefer removing this and use local styles */
   a {
     color: inherit;
     text-decoration: none;
@@ -92,7 +72,7 @@
     font-size: var(--contentFontSize);
     line-height: var(--contentLineHeight);
     color: var(--darkGray);
-    @media (min-width: 480px) {
+    @media (--mobile-m) {
       font-size: calc(var(--contentFontSize) + 0.1);
     }
   }
@@ -104,11 +84,7 @@ hr {
     opacity: 0.2;
     margin: 2rem 0;
   }
-  
-  .bm-burger-button button {
-    cursor: pointer;
-  }
-  
+
   img {
     margin-bottom: 0;
   }

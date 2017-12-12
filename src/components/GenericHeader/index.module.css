@@ -1,8 +1,9 @@
 @import '../../styles/variables.module.css';
+@import '../../styles/media-queries.module.css';
 
 .wrapper {
   composes: header-wrapper from "styles/base.module.css";
-  @media (min-width: 768px) {
+  @media (--tablet) {
     align-items: center;
   }
 }

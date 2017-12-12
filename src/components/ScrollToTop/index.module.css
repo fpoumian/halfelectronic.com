@@ -1,4 +1,5 @@
 @import '../../styles/variables.module.css';
+@import '../../styles/media-queries.module.css';
 
 .root {
   position: fixed;
@@ -11,7 +12,7 @@
 .icon {
   font-size: 2rem;
   color: var(--neutralGray);
-  @media (min-width: 768px) {
+  @media (--tablet) {
     font-size: 2.5rem;
   }
 }

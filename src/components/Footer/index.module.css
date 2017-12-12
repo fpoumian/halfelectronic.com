@@ -1,4 +1,5 @@
 @import '../../styles/variables.module.css';
+@import '../../styles/media-queries.module.css';
 
 .font-size {
   font-size: 0.75rem;
@@ -8,7 +9,7 @@
   text-align: center;
   background: var(--darkestGray);
   padding: 4vh 0;
-  @media (min-width: 992px) {
+  @media (--desktop) {
     display: flex;
     flex-direction: column;
   }

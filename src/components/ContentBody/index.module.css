@@ -17,10 +17,6 @@
   margin: 4vh auto;
   word-wrap: break-word;
 
-  /* & :--headingElements {
-    margin-bottom: -1rem;
-  } */
-
   & p {
     margin: 2rem 0;
   }
@@ -32,6 +28,11 @@
 
   & img {
     width: 100%;
+  }
+
+  & h1,& h2, & h3, & h4,& h5,& h6 {
+    margin-top: 3rem;
+    margin-bottom: -1rem;
   }
 
   & h2 {

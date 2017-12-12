@@ -1,0 +1,11 @@
+@import './variables.module.css';
+
+:root {
+  --wrapperDisplay: {
+    display: block;
+  };
+  --wrapperWidth: {
+    width: 70%;
+    max-width: var(--maxWidth);
+  };
+}

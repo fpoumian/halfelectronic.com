@@ -1,11 +1,13 @@
 @import '../../styles/variables.module.css';
+@import '../../styles/media-queries.module.css';
+
 
 .wrapper {
   display: flex;
   flex-direction: column;
   margin: 8vh auto;
   align-items: center;
-  @media (min-width: 480px) {
+  @media (--mobile-m) {
     flex-direction: row;
     justify-content: space-between;
   }

@@ -1,4 +1,5 @@
 @import '../../styles/variables.module.css';
+@import '../../styles/media-queries.module.css';
 
 .wrapper {
   display: inline-flex;
@@ -6,17 +7,15 @@
   margin-top: 2rem;
   align-items: center;
   flex-direction: column;
-  @media (min-width: 768px) {
+  @media (--tablet) {
     width: 225px;
     justify-content: space-between;
     flex-direction: row;
   }
-  @media (min-width: 768px) {
-  }
   & > div {
     width: 100%;
     margin-bottom: 1rem;
-    @media (min-width: 768px) {
+    @media (--tablet) {
       width: auto;
     }
   }
