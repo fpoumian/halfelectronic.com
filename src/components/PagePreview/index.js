@@ -9,13 +9,7 @@ import styles from './index.module.css'
 
 const entities = new AllHtmlEntities()
 
-const PagePreview = ({
-  slug,
-  title,
-  date,
-  excerpt,
-  category,
-}) => {
+const PagePreview = ({ slug, title, date, excerpt, category }) => {
   const pageDate = date ? new Date(date) : null
 
   return (

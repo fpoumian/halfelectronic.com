@@ -10,8 +10,9 @@ class GoodReadsAPI {
   getUserCurrentlyReading() {
     return axios({
       method: 'get',
-      url: `${GoodReadsAPI.endpoint}/user/${this
-        ._userId}/shelves/currently-reading`,
+      url: `${GoodReadsAPI.endpoint}/user/${
+        this._userId
+      }/shelves/currently-reading`,
       responseType: 'text',
     })
   }

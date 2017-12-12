@@ -6,7 +6,6 @@ import Helmet from 'react-helmet'
 import PostsList from 'components/PostsList'
 import ArchiveHeader from 'components/ArchiveHeader'
 import Cover from 'components/Cover'
-import { sortPostsByDate } from 'utils/posts'
 
 class TagArchive extends React.Component {
   render() {
